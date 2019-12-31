@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css?family=Girassol&display=swap');
+.wrapper{
+    display: flex;
+    align-items: center;
+}
+ 
+.navigation{
+    width: 100%;   
+    display: flex; 
+    position: relative;
+    // border:  1px solid black;
+    // justify-content: space-between;
+    // align-items: center;
+    
+    font-weight: bold;
+    &__logo{
+        font-size: 3em;
+        font-family: 'Girassol', cursive;
+        color: var(--main-design-color);
+        padding: 0.3em 0;
+        padding-right: 1em;
+        line-height: 1;
+        span{
+            font-size: 0.5em;
+            color: black;
+        }
+    }
+
+    &__list{
+        display: flex;
+    }
+    &__item{
+        color: var(--text-color-dark);
+        padding: 2em 1.3em 1.8em;
+        position: relative; 
+ 
+        >ul{
+            position: absolute;
+            bottom: 0;
+            transform: translateY(100%);
+            display: none;
+            box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+            background: var(--main-bg-color);
+
+            li{
+                position: relative;
+                padding: 1.3em 3em 1.3em 1.3em;
+                text-align: left;
+                i{
+                    position: absolute;
+                    right: 5px;
+                }
+                ul{
+                    position: absolute;
+                    display: none; 
+                    top: 0;
+                    right: -100%;   
+                    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+                    background: var(--main-bg-color);
+                }
+                &:hover::before{
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    width: 0.3em;
+                    height: 100%;
+                    background: var(--main-design-color);
+                    
+                }
+                &:hover{
+                    > a{
+                        color: var(--main-design-color);
+                    }
+                    &:hover{
+                        ul{
+                            display: block;
+                    }}
+                }
+            }
+        }
+        &:hover{
+            > a{
+                color: var(--main-design-color);
+            }
+        }
+        &:hover{
+            > ul{
+                display: block;
+            }
+        }
+        &:hover::before{
+            content: ''; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height:  0.3em;
+            background: var(--main-design-color);
+            }
+        &.active{
+            color: var(--main-design-color);
+            ::before{
+                content: ''; 
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height:  0.3em;
+                background: var(--main-design-color);
+            }
+        }
+    }
+} 
+ 
+.signIn{
+    display: flex;
+    align-items: center;
+    padding: 0.3em 3em; 
+    border: 1px solid var(--main-design-color);
+    border-radius: 1.2em;
+    color: var(--main-design-color);
+    transition: .5s;
+    text-transform: uppercase;
+    &:hover{
+        background: #de460b;
+        color: #fff;
+    }
+    // color: red;
+}
+
+.toggler{
+    position: absolute;
+    cursor: pointer;
+    top: 2px;
+    right: 15px;
+    z-index: 0;
+    opacity: 0;
+}
+ 
+@media (max-width: 823px){
+    .navigation__item{ 
+        padding-right: 0.6em;
+        padding-left: 0.6em;
+    }
+
+}
+@media (max-width: 768px){
+ 
+    .navigation{
+        display: block;
+        &__list{   
+            visibility: hidden;
+            display: block;
+        }
+        &__item{ 
+            
+            height: 0;
+            padding: 0; 
+            transition: all ease-in .4s;
+        }
+    }
+    .signIn{
+        display: none;
+    }
+    .toggler, .hamburger{
+        position: absolute;
+        top: -20px;
+        right: 0   ;
+        width: 40px;
+        height: 40px ;
+        z-index: 4;
+    }
+    .toggler{
+        top: 20px;
+        z-index: 5;
+        &:checked + .hamburger > div {
+            transform: rotate(135deg);
+            &:before, &:after{
+                top: 0;
+                transform: rotate(90deg);
+            }
+        }
+        &:checked:hover + .hamburger > div   {
+            transform: rotate(225deg);
+        }
+        &:checked ~ .navigation__list {
+             visibility: visible; 
+
+             .navigation__item{  
+                padding: 2em 1.3em 1.8em;
+             }
+ 
+        }
+    }
+    .hamburger {
+    top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > div {
+        position: relative;
+        flex: none;
+        width: 100%;
+        padding: 2px 0;
+        background: var(--main-design-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: -12px;
+            width: 100%;
+            padding: 2px 0;
+            background: inherit;}
+        &::after {
+            top:  12px ;
+         }}} 
+           
+}

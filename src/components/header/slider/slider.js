@@ -4,7 +4,7 @@ import styles from './slider.module.css';
 
 const Slider = () =>{
     return(
-        <div >
+        <div className="container">
             <h1 className={styles.title}>
                 Slider
             </h1>
