@@ -8,17 +8,13 @@
     width: 100%;   
     display: flex; 
     position: relative;
-    // border:  1px solid black;
-    // justify-content: space-between;
-    // align-items: center;
-    
+    justify-content: space-between;
     font-weight: bold;
     &__logo{
         font-size: 3em;
         font-family: 'Girassol', cursive;
         color: var(--main-design-color);
         padding: 0.3em 0;
-        padding-right: 1em;
         line-height: 1;
         span{
             font-size: 0.5em;
@@ -28,6 +24,7 @@
 
     &__list{
         display: flex;
+        align-items: center;
     }
     &__item{
         color: var(--text-color-dark);
@@ -44,19 +41,11 @@
 
             li{
                 position: relative;
-                padding: 1.3em 3em 1.3em 1.3em;
+                padding: 1.3em 2em 1.3em 2em;
                 text-align: left;
                 i{
                     position: absolute;
                     right: 5px;
-                }
-                ul{
-                    position: absolute;
-                    display: none; 
-                    top: 0;
-                    right: -100%;   
-                    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
-                    background: var(--main-bg-color);
                 }
                 &:hover::before{
                     position: absolute;
@@ -72,10 +61,6 @@
                     > a{
                         color: var(--main-design-color);
                     }
-                    &:hover{
-                        ul{
-                            display: block;
-                    }}
                 }
             }
         }
@@ -114,19 +99,22 @@
 } 
  
 .signIn{
+    margin-left: 5em;
     display: flex;
     align-items: center;
-    padding: 0.3em 3em; 
+    padding: 0.7em 3em;  
     border: 1px solid var(--main-design-color);
     border-radius: 1.2em;
     color: var(--main-design-color);
-    transition: .5s;
+    transition: .4s;
     text-transform: uppercase;
+    i{
+        padding-right: 0.3em;
+    }
     &:hover{
         background: #de460b;
         color: #fff;
     }
-    // color: red;
 }
 
 .toggler{
@@ -143,25 +131,65 @@
         padding-right: 0.6em;
         padding-left: 0.6em;
     }
-
 }
+
+@media (max-width: 860px){
+    .signIn{
+        margin-left: 2em;
+    }
+}
+
+
+
 @media (max-width: 768px){
- 
     .navigation{
         display: block;
         &__list{   
+            transition: .4s;
+
+            opacity: 0;
             visibility: hidden;
             display: block;
+            a{
+                padding: 0;
+                height: 0;
+            }
         }
-        &__item{ 
-            
+        &__item{  
             height: 0;
             padding: 0; 
             transition: all ease-in .4s;
+            >ul{
+                position: relative;
+                transform: translateY(0);
+                width: 100%;
+                box-shadow: none;
+                margin: 0 auto;
+                li{
+                    position: relative;
+                    text-align: center;
+                    width: 100%;
+                    padding-left: 0;
+                    padding-right: 0; 
+                    padding: 1.3em 0em 0em 0em;
+                    &:hover::before{
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height:  0.3em;
+                    }
+                    i{
+                        position: relative; 
+                    }
+            }}
         }
     }
+    .wrapper{
+        display: block;
+    }
     .signIn{
-        display: none;
+        margin: 0 auto;
+        max-width: 50px;
     }
     .toggler, .hamburger{
         position: absolute;
@@ -186,11 +214,16 @@
         }
         &:checked ~ .navigation__list {
              visibility: visible; 
+             opacity: 1;
 
-             .navigation__item{  
-                padding: 2em 1.3em 1.8em;
+            a{
+                height: auto;
+                padding: 0.7em 3em;  
+            }
+             .navigation__item{   
+                height: auto;
+                padding: 2em 0em 1.8em;
              }
- 
         }
     }
     .hamburger {
@@ -219,5 +252,4 @@
         &::after {
             top:  12px ;
          }}} 
-           
 }

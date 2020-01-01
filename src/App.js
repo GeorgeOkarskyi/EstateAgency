@@ -1,13 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
+import React from 'react'; 
 import './normalize/Normalize.css'
 import './App.css';
 import Header from './components/header/header'
 
-function App() {
+function App(props) {
   return (
-    <div> 
-      <Header />
+    <div>
+      <Header state={props.state} dispatch={props.dispatch} />
     </div>
   );
 }
