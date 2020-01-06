@@ -1,23 +1,22 @@
 import React from 'react';
 import styles from './navigation.module.scss';
-import { showModalActionCreator } from '../../../redux/state';
+import { showModalActionCreator } from '../../../redux/modal-reducer';
 import 'font-awesome/css/font-awesome.min.css';
 import { NavLink } from 'react-router-dom';
 import Modal from './modal/modal';
 
 
-function target(e) {
-    e.preventDefault();
-    e.target.classList.toggle(styles.ttt);
-};
+
 
 
 const Navigation = (props) => {
     let openModal = () => {
         props.dispatch(showModalActionCreator())
     }
-
-
+    function target(e) {
+        e.preventDefault();
+        e.target.classList.toggle(styles.ttt);
+    };
     return (
         <div >
             <Modal dispatch={props.dispatch} state={props.state} />
@@ -32,76 +31,44 @@ const Navigation = (props) => {
                             <div></div>
                         </div>
                         <ul onClick={target} className={styles.navigation__list}>
-                            <li className={`${styles.navigation__item} ${styles.active}`}>
-                                <a href="#" >Home </a>
+                            <li >
+                                <NavLink activeClassName={styles.active} className={styles.navigation__item}  to='/sliderView'>Home</NavLink>
+                            </li>
+                            <li >
+                                <NavLink activeClassName={styles.active} className={styles.navigation__item} to='/catalog'>Catalog</NavLink>
+
                             </li>
                             <li className={styles.navigation__item}>
-                                <a href="">Properties <i className="fa fa-caret-down"></i></a>
+                                <a href="">Services <i className="fa fa-caret-down"></i></a>
                                 <ul>
                                     <li>
-                                        <a href="#">House</a>
+                                        <a href="#">Apartments For Rent</a>
                                     </li>
                                     <li>
-                                        <a href="#">Office</a>
+                                        <a href="#">Apartments For Sale</a>
                                     </li>
                                     <li>
-                                        <a href="#">Apartment</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Residential</a>
+                                        <a href="#">Selling a property</a>
                                     </li>
                                 </ul>
                             </li>
                             <li className={styles.navigation__item}>
-                                <a href="">Agents <i className="fa fa-caret-down"></i></a>
+                                <a href="">Information  <i className="fa fa-caret-down"></i></a>
                                 <ul>
                                     <li>
-                                        <a href="#">House</a>
+                                        <a href="#">Longterm Apartments FAQ</a>
                                     </li>
                                     <li>
-                                        <a href="#">Office</a>
+                                        <a href="#">Agency Fees</a>
                                     </li>
                                     <li>
-                                        <a href="#">Apartment</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Residential</a>
+                                        <a href="#">Bying Property FAQ</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li className={styles.navigation__item}>
-                                <a href="">Pages <i className="fa fa-caret-down"></i></a>
-                                <ul>
-                                    <li>
-                                        <a href="#">House</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Office</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Apartment</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Residential</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li className={styles.navigation__item}>
-                                <a href="">Blog <i className="fa fa-caret-down"></i></a>
-                                <ul>
-                                    <li>
-                                        <a href="#">House</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Office</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Apartment</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Residential</a>
-                                    </li>
-                                </ul>
+                            <li  >
+                            <NavLink activeClassName={styles.active} className={styles.navigation__item} to='/contacts'>Contacts</NavLink>
+ 
                             </li>
                             <NavLink onClick={openModal} className={styles.signIn}
                                 to='/login' activeClassName={styles.active}>

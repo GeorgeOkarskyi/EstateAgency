@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway&display=swap');
 :root {
   --main-design-color: #F34B0A;
-  --main-bg-color: #fafafa;
+  --main-bg-color: #fbfbfb;
+  --dark-bg-color: #363636;
   --search-area-bg: #e6e6e6;
-  --text-color-dark: #4a4747;
+  --text-color-dark: #7e7e7e;
+  --text-color-light: #fafafa;
+
 }
 *{
   margin: 0;
@@ -37,12 +40,7 @@ body{
   padding: 0 3%;
 }
 
-
-@media (max-width: 992px){
-  body{
-    font-size: 14px;
-  }
-}
+ 
 @media (max-width: 992px){
   body{
     font-size: 14px;

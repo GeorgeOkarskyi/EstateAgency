@@ -10,6 +10,7 @@
     position: relative;
     justify-content: space-between;
     font-weight: bold;
+    // border-bottom: 1px solid #000;
     &__logo{
         font-size: 3em;
         font-family: 'Girassol', cursive;
@@ -28,11 +29,13 @@
     }
     &__item{
         color: var(--text-color-dark);
-        padding: 2em 1.3em 1.8em;
+        padding: 2em 1em 1.8em;
         position: relative; 
+        display: block;
  
         >ul{
             position: absolute;
+            z-index: 11;
             bottom: 0;
             transform: translateY(100%);
             display: none;
@@ -83,20 +86,22 @@
             height:  0.3em;
             background: var(--main-design-color);
             }
-        &.active{
-            color: var(--main-design-color);
-            ::before{
-                content: ''; 
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height:  0.3em;
-                background: var(--main-design-color);
-            }
-        }
+
     }
-} 
+}
+
+.active{
+    color: var(--main-design-color); 
+    &::before{
+        content: ''; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height:  0.3em;
+        background: var(--main-design-color);
+    }
+}
  
 .signIn{
     margin-left: 5em;

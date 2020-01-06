@@ -2,7 +2,7 @@ import React from 'react';
 import Login from './log-in/log-in.jsx'
 import Register from './register/register'
 import styles from './modal.module.scss';
-import {closeModalActionCreator} from '../../../../redux/state';
+import {closeModalActionCreator} from '../../../../redux/modal-reducer';
 import {Route, NavLink} from 'react-router-dom';
 
 
@@ -29,10 +29,10 @@ export default class Modal extends React.Component {
             <NavLink to='/register'className={styles.top_item} activeClassName={styles.top_item_active}>registration</NavLink>
           </div>
           <Route path='/login' render={() =>
-            <Login></Login>}>
+            <Login state={this.props.state}></Login>}>
           </Route>
           <Route path='/register' render={() =>
-            <Register></Register>}>
+            <Register state={this.props.state} dispatch={this.props.dispatch}></Register>}>
           </Route> 
         </div> 
       </div>
