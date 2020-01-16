@@ -1,24 +1,15 @@
-import React from 'react';
-import Navigation from './navigation/navigation';
-import SliderView from './slider/slider';
+import React from 'react'; 
 import styles from './header.module.css';
-import {Route} from 'react-router-dom';
+import NavigationContainer from './navigation/navigationContainer'
 
-// import Modal from './modal/modal';
-
-
-const Header = (props) => {
+const Header = () => {
     return (
         <div>
             <header className={styles.header}>
-                <Navigation dispatch={props.dispatch} state={props.state} />
-                <Route path='/sliderView' render={() =>
-                    <SliderView ></SliderView>}>
-                </Route> 
+                <NavigationContainer /> 
             </header>
         </div>
     )
-
 }
 
 export default Header;

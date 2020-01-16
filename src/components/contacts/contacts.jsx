@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './contacts.module.scss';
+import MapContainer from './map/map'
 import 'font-awesome/css/font-awesome.min.css';
 
 
@@ -11,17 +12,18 @@ const Contacts = (props) => {
                 <div className={styles.contacts_flex}>
                     <address className={styles.contacts__address}>
                         <div>
-                            <i class="fa fa-map-marker"></i><span>
+                            <i className="fa fa-map-marker"></i><span>
                                 Vasyl Poryk Street 47, Vishenka 21000, Vinnytsia
                             </span>
                         </div>
                         <div>
-                            <i class="fa  fa-phone"></i><span>
+                            <i className="fa  fa-phone"></i><span>
                                 Tel. +1 2123431725
                             </span>
                         </div>
                         <div>
-                            <i className="fa fa-envelope"></i><span>
+                            <i className="fa  fa-envelope-square"></i>
+                            <span>
                                 Email. info@harutheme.com  
                             </span>
                         </div>
@@ -36,6 +38,7 @@ const Contacts = (props) => {
                         <input className={styles.contacts_form__button} type="submit" value="Send Message"></input>
                     </form>
                 </div>
+                <MapContainer></MapContainer>
             </div>
         </div>
     )

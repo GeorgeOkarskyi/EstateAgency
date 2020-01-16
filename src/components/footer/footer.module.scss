@@ -4,7 +4,7 @@
     color: var(--text-color-light);
     &_container{
         display: flex;
-        align-items: center;
+        align-items: top;
         justify-content: space-between;
     }
     &_social{
@@ -24,29 +24,24 @@
     &__item{
         text-align: left; 
         line-height: 1.4;
-        max-width: 12em;
+        max-width: 16em;
     }
     &_list{
+
         &__item{
             color: var(--text-color-dark);
             position: relative;
             cursor: pointer;
             transition: ease-out .3s;
-            &_padding{
-                padding-left: 1em;
-            }
+            display: flex;
             i{
                 color: var(--main-design-color);
                 margin-right: 5px;
-                position: absolute;
-                transform: translateX(-150%);
                 font-size: 1em;               
             }
-             &:hover{
+ 
+            &:hover{
                  color: var(--main-design-color);
-                 i{
-                    font-size: 1.1em; 
-                 }
             }
         }
     }
@@ -78,6 +73,11 @@
             width: 100%;
             max-width: none;
             text-align: center;
+        }
+        &_list{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         &_social{
             margin: 0 auto;

@@ -1,0 +1,31 @@
+.sorting{
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+    background: var(--search-area-bg);
+    color: var(--text-color-dark);
+
+
+    &__info{
+        font-weight: normal;
+        font-size: 1.1em;
+    }
+    &_wrapper{
+        display: flex;
+        align-items: center;
+    }
+    &__title{
+        font-size: 1em;
+        font-weight: normal;
+        padding-right: 0.2em;
+    }
+    &_select{ 
+        border: none;
+        font-size: 0.8em;
+        &__option{
+ 
+        }
+    }
+}

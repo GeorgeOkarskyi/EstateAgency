@@ -1,4 +1,25 @@
-.catalog_container{
+.catalog{
+    &_container{
     display: flex; 
- 
+    padding-bottom: 3em;
+    }
+}
+
+.right{
+    width: 100%;
+    padding-left: 3em;
+}
+
+
+
+@media (max-width: 768px){
+    .catalog{
+        &_container{
+            display: block;
+        }
+    }
+    .right{
+        padding-left: 0;
+
+    }
 }

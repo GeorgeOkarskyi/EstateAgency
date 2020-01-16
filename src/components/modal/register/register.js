@@ -1,37 +1,33 @@
 import React from 'react';
 import styles from '../modal.module.scss';
-import {addUserActionCreator, 
-    changeNameTextActionCreator, 
-    changeEmailTextActionCreator,
-    changePasswordTextActionCreator} 
-    from '../../../../../redux/modal-reducer';
-
+ 
 const Register = (props) => {
-    let input = props.state.modal.input;
-
+    if(!props.regiastation){
+        return null;
+    }
     let newNameText = React.createRef();
     let newEmailText = React.createRef();
     let newPasswordText = React.createRef();
-
+    let newPasswordConfirm = React.createRef();
     let onNameChange = () =>{
         let text = newNameText.current.value;
-        props.dispatch(changeNameTextActionCreator(text));
+        props.nameChange(text);
     }
     let onEmailChange = () =>{
         let text = newEmailText.current.value;
-        props.dispatch(changeEmailTextActionCreator(text));
+        props.emailChange(text);
     }
     let onPasswordChange = () =>{
-        let text = newPasswordText.current.value;
-        props.dispatch(changePasswordTextActionCreator(text));
+        let text = newPasswordText.current.value; 
+        props.passwordChange(text);
     }
-
-    let addUser = (e) => { 
-        e.preventDefault();  
-        props.dispatch(addUserActionCreator(input));
-        props.dispatch(changePasswordTextActionCreator(''));
-        props.dispatch(changeEmailTextActionCreator(''));
-        props.dispatch(changeNameTextActionCreator(''));
+ 
+    let onPasswordCheck = () =>{
+        let passwordCheck = newPasswordConfirm.current.value;
+        props.passwordCheck(passwordCheck); 
+    }
+    let onAddUser = () => {  
+        props.addUser(props.input);
 
     }
     return (
@@ -39,30 +35,33 @@ const Register = (props) => {
             <form className={styles.form}>
                 <input className={styles.form_input} 
                         onChange={onNameChange} 
-                        value={input.name} 
+                        value={props.input.name} 
                         ref={newNameText}
                         type="name" 
                         placeholder="Full name" 
                         name="fname" required></input><br/>
                 <input className={styles.form_input} 
-                        value={input.email}  
+                        value={props.input.email}  
                         onChange={onEmailChange} 
                         ref={newEmailText}
                         type="email" 
                         placeholder="Email Address" 
                         name="email" required></input><br/>
                 <input className={styles.form_input} 
-                        value={input.password} 
+                        value={props.input.password} 
                         onChange={onPasswordChange} 
                         ref={newPasswordText}
                         type="password" 
                         placeholder="Password" 
-                        name="password" required></input><br/>
+                          required></input><br/>
                 <input className={styles.form_input} 
                         id='passwordConfirm' type="password" 
                         placeholder="Confirm Password" 
-                        name="password" required></input><br/>
-                <button className={styles.form_submit} onClick={addUser} type="submit">Signup</button>
+                        onChange={onPasswordCheck}
+                        ref={newPasswordConfirm}
+                          required></input><br/>
+                <h4 className={styles.form_info}>{props.informWindow}</h4> 
+                <button className={styles.form_submit} onClick={onAddUser} type="submit">Signup</button>
             </form>
         </div>
     )

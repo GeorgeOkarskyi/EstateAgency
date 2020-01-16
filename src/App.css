@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway&display=swap');
 :root {
-  --main-design-color: #F34B0A;
+  --main-design-color: rgb(0, 122, 144);
   --main-bg-color: #fbfbfb;
   --dark-bg-color: #363636;
-  --search-area-bg: #e6e6e6;
+  --search-area-bg: #fbfafa;
   --text-color-dark: #7e7e7e;
   --text-color-light: #fafafa;
 
@@ -12,7 +12,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif; 
-
+  
 
 }  
 *:focus{

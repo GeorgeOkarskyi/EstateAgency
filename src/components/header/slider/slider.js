@@ -16,34 +16,34 @@ export default class SliderView extends Component {
             <div >
                 <Slider {...settings}>
                     <div className={styles.container}>
-                        <img src='https://images.ua.prom.st/836252515_dizajn-kvartiri.jpg'></img>
+                        <img alt='1' src='https://images.ua.prom.st/836252515_dizajn-kvartiri.jpg'></img>
                     </div>
                     <div className={styles.container}>
 
-                        <img src='https://images.ua.prom.st/836252515_dizajn-kvartiri.jpg'></img>
-
-
-                    </div>
-                    <div className={styles.container}>
-
-                        <img src='https://images.ua.prom.st/836252515_dizajn-kvartiri.jpg'></img>
+                        <img alt='2' src='https://images.ua.prom.st/836252515_dizajn-kvartiri.jpg'></img>
 
 
                     </div>
                     <div className={styles.container}>
 
-                        <img src='https://images.ua.prom.st/836252515_dizajn-kvartiri.jpg'></img>
+                        <img alt='3' src='https://images.ua.prom.st/836252515_dizajn-kvartiri.jpg'></img>
 
 
                     </div>
                     <div className={styles.container}>
 
-                        <img src='https://images.ua.prom.st/836252515_dizajn-kvartiri.jpg'></img>
+                        <img alt='4' src='https://images.ua.prom.st/836252515_dizajn-kvartiri.jpg'></img>
+
 
                     </div>
                     <div className={styles.container}>
 
-                        <img src='https://images.ua.prom.st/836252515_dizajn-kvartiri.jpg'></img>
+                        <img alt='5' src='https://images.ua.prom.st/836252515_dizajn-kvartiri.jpg'></img>
+
+                    </div>
+                    <div className={styles.container}>
+
+                        <img alt='6' src='https://images.ua.prom.st/836252515_dizajn-kvartiri.jpg'></img>
 
                     </div>
                 </Slider>

@@ -26,13 +26,56 @@
     &__list{
         display: flex;
         align-items: center;
+        color: var(--text-color-dark);
+        li{ 
+            span{
+                transition: 0.5s;
+            }
+            i{ 
+                transform: rotate(-90deg);
+                transition: 0.5s;
+            }
+            >ul{
+                position: absolute;
+                z-index: 11;
+                bottom: 0;
+                transform: translateY(100%);
+                display: none;
+                box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+                background: var(--main-bg-color);
+                li{
+                    position: relative;
+                    padding: 1.3em 2em 1.3em 2em;
+                    text-align: left;
+                    &:hover::before{
+                        position: absolute;
+                        content: '';
+                        top: 0;
+                        left: 0;
+                        width: 0.3em;
+                        height: 100%;
+                        background: var(--main-design-color);
+                    }
+                    &:hover{
+                        > a{
+                            color: var(--main-design-color);
+                        }
+                    }
+                }
+            }
+            &:hover{
+                > ul{
+                    display: block;
+                }
+            }
+        }
     }
     &__item{
-        color: var(--text-color-dark);
         padding: 2em 1em 1.8em;
         position: relative; 
         display: block;
- 
+        transition: .5s;
+        color: var(--text-color-dark); 
         >ul{
             position: absolute;
             z-index: 11;
@@ -41,15 +84,10 @@
             display: none;
             box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
             background: var(--main-bg-color);
-
             li{
                 position: relative;
                 padding: 1.3em 2em 1.3em 2em;
                 text-align: left;
-                i{
-                    position: absolute;
-                    right: 5px;
-                }
                 &:hover::before{
                     position: absolute;
                     content: '';
@@ -58,7 +96,6 @@
                     width: 0.3em;
                     height: 100%;
                     background: var(--main-design-color);
-                    
                 }
                 &:hover{
                     > a{
@@ -67,9 +104,15 @@
                 }
             }
         }
+
         &:hover{
-            > a{
-                color: var(--main-design-color);
+            color: var(--main-design-color); 
+            span{
+                color: var(--main-design-color); 
+            }
+            i{
+                color: var(--main-design-color); 
+                transform: rotate( 0deg);  
             }
         }
         &:hover{
@@ -86,7 +129,6 @@
             height:  0.3em;
             background: var(--main-design-color);
             }
-
     }
 }
 
@@ -110,6 +152,7 @@
     padding: 0.7em 3em;  
     border: 1px solid var(--main-design-color);
     border-radius: 1.2em;
+    background: none;
     color: var(--main-design-color);
     transition: .4s;
     text-transform: uppercase;
@@ -117,7 +160,7 @@
         padding-right: 0.3em;
     }
     &:hover{
-        background: #de460b;
+        background: var(--main-design-color);
         color: #fff;
     }
 }
@@ -130,6 +173,10 @@
     z-index: 0;
     opacity: 0;
 }
+
+
+ 
+
  
 @media (max-width: 823px){
     .navigation__item{ 
@@ -144,26 +191,42 @@
     }
 }
 
-
+@keyframes roadRunnerIn {
+    0% {
+      transform:translateX(-1500px) skewX(30deg) scaleX(1.3);
+    }
+    50% {
+        transform:translateX(-0px) skewX(0deg) scaleX(1);
+    }
+    100% {
+        transform:translateX(-7px) skewX(0deg) scaleX(1);
+    }
+}
 
 @media (max-width: 768px){
-    .navigation{
+ 
+    .navigation{ 
         display: block;
-        &__list{   
-            transition: .4s;
+        &__list{
+            animation: roadRunnerIn .7s cubic-bezier(0.165, 0.840, 0.83, 1.00) both;
+            width: 300px;
+            height: auto; 
+            top: 0;
+            left: -4%;
+            background: #000;
+            position: fixed;
+            z-index: 33;
+            display: none;
+            align-items: center;
+            border-radius: 0px 0px 27px 0px;
 
-            opacity: 0;
-            visibility: hidden;
-            display: block;
-            a{
-                padding: 0;
-                height: 0;
-            }
         }
-        &__item{  
-            height: 0;
-            padding: 0; 
+        &__item{ 
             transition: all ease-in .4s;
+            text-align: left;
+            padding-left: 4em;
+            
+
             >ul{
                 position: relative;
                 transform: translateY(0);
@@ -172,7 +235,7 @@
                 margin: 0 auto;
                 li{
                     position: relative;
-                    text-align: center;
+                    text-align: left;
                     width: 100%;
                     padding-left: 0;
                     padding-right: 0; 
@@ -194,7 +257,8 @@
     }
     .signIn{
         margin: 0 auto;
-        max-width: 50px;
+        margin-bottom: 20px;
+        // max-width: 50px;
     }
     .toggler, .hamburger{
         position: absolute;
@@ -206,9 +270,15 @@
     }
     .toggler{
         top: 20px;
-        z-index: 5;
+        z-index: 55;
+        &:checked {
+            z-index: 33;
+            width: 100%;
+            height: 100vh;
+        }
         &:checked + .hamburger > div {
             transform: rotate(135deg);
+            
             &:before, &:after{
                 top: 0;
                 transform: rotate(90deg);
@@ -217,44 +287,38 @@
         &:checked:hover + .hamburger > div   {
             transform: rotate(225deg);
         }
-        &:checked ~ .navigation__list {
-             visibility: visible; 
-             opacity: 1;
-
-            a{
-                height: auto;
-                padding: 0.7em 3em;  
-            }
-             .navigation__item{   
-                height: auto;
-                padding: 2em 0em 1.8em;
-             }
+        &:checked ~ .navigation__list { 
+            display: block;
+            opacity: 1;
         }
     }
     .hamburger {
-    top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    > div {
-        position: relative;
-        flex: none;
-        width: 100%;
-        padding: 2px 0;
-        background: var(--main-design-color);
+        z-index: 32;
+        top: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all 0.4s ease;
-        &::before, &::after {
-            content: '';
-            position: absolute;
-            z-index: 1;
-            top: -12px;
+        > div {
+            position: relative;
+            flex: none;
             width: 100%;
             padding: 2px 0;
-            background: inherit;}
-        &::after {
-            top:  12px ;
-         }}} 
+            background: var(--main-design-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                top: -12px;
+                width: 100%;
+                padding: 2px 0;
+                background: inherit;}
+            &::after {
+                top:  12px ;
+            }
+        }
+    } 
 }
