@@ -9,8 +9,7 @@ let mapStateToProps = (state) =>{
   }
   
   let mapDispatchToProps = (dispatch) =>{
-    return{
- 
+    return{ 
     }
   }
   

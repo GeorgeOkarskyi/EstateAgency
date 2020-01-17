@@ -1,92 +1,95 @@
-import React from 'react';
-import styles from './navigation.module.scss'; 
+import React, { useState } from 'react';
+import styles from './navigation.module.scss';
 import 'font-awesome/css/font-awesome.min.css';
-import { NavLink } from 'react-router-dom';
-import ModalContainer from '../../modal/modalContainer';
- 
+import { Link } from 'react-router-dom';
+
 
 
 
 
 const Navigation = (props) => {
- 
-    let onOpenModal = () => { 
+    const [showServices, setServices] = useState(true);
+    const [showInformation, setInformation] = useState(true);
+
+
+    let onOpenModal = () => {
         props.openModal()
     }
-    function target(e) {
-        e.preventDefault();
-    };
+    let checkbox = React.createRef();
 
+    let close = () => {
+        checkbox.current.checked = false;
+    }
 
 
     return (
-        <div >
- 
-            <ModalContainer/>
+        <div className="container">
+            <div className={styles.wrapper}>
+                <nav className={styles.navigation}>
+                    <div className={styles.navigation__logo}>
+                        <a href="/#">the<span>agency</span></a>
+                    </div>
+                    <input ref={checkbox} type="checkbox" className={styles.toggler}></input>
+                    <div className={styles.hamburger}>
+                        <div></div>
+                    </div>
+                    <ul className={styles.navigation__list}>
+                        <li onClick={close} >
+                            <Link activeClassName={styles.active} className={styles.navigation__item} exact to='/'>Home</Link>
+                        </li>
+                        <li onClick={close}>
+                            <Link activeClassName={styles.active} className={styles.navigation__item} to='/catalog'>Catalog</Link>
+                        </li>
+                        <li>
+                            <div onClick={() => { showServices ? setServices(false) : setServices(true) }}
+                                activeClassName={styles.active}
+                                className={`${styles.navigation__item}`}  ><span>Services</span> <i className="fa fa-caret-down"></i></div>
 
-            <div className="container">
-                <div className={styles.wrapper}>
-                    <nav className={styles.navigation}>
-                        <div className={styles.navigation__logo}>
-                            <a href="/#">the<span>agency</span></a>
-                        </div>
-                        <input type="checkbox" className={styles.toggler}></input>
-                        <div className={styles.hamburger}>
-                            <div></div>
-                        </div>
-                             <ul onClick={target} className={styles.navigation__list}>
-                                <li  >
-                                    <NavLink activeClassName={styles.active} className={styles.navigation__item} exact to='/'>Home</NavLink>
-                                </li>
-                                <li >
-                                    <NavLink activeClassName={styles.active} className={styles.navigation__item} to='/catalog'>Catalog</NavLink>
-
-                                </li>
-                                <li >
-                                    <NavLink activeClassName={styles.active} className={styles.navigation__item} to='bla'><span>Services</span> <i className="fa fa-caret-down"></i></NavLink>
-
-                                    <ul>
-                                        <li>
-                                            <a href="/#">Apartments For Rent</a>
-                                        </li>
-                                        <li>
-                                            <a href="/#">Apartments For Sale</a>
-                                        </li>
-                                        <li>
-                                            <a href="/#">Selling a property</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li  >
-                                    <NavLink activeClassName={styles.active} className={styles.navigation__item} to='bla'><span>Information</span> <i className="fa fa-caret-down"></i></NavLink>
-
-                                    <ul>
-                                        <li>
-                                            <a href="/#">Longterm Apartments FAQ</a>
-                                        </li>
-                                        <li>
-                                            <a href="/#">Agency Fees</a>
-                                        </li>
-                                        <li>
-                                            <a href="/#">Bying Property FAQ</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li  >
-                                    <NavLink activeClassName={styles.active} className={styles.navigation__item} to='/contacts'>Contacts</NavLink>
+                            <ul onClick={close} className={`${styles.navigation__list__dropdown}  ${showServices ? styles.navigation__list__dropdown__open : ''} `}>
+                                <li> 
+                                    <Link to='/services/apartments-for-rent'>Apartments For Rent</Link>
 
                                 </li>
-                                <button onClick={onOpenModal} className={styles.signIn}>
-                                    <i className="fa fa-sign-in"/><span>Sign in</span>
-                                </button>
+                                <li>
+                                    <Link to='/services/apartments-for-sale'>Apartments For Sale</Link>
+
+                                </li>
+                                <li> 
+                                    <Link to='/services/selling-property'>Selling a property</Link>
+
+                                </li>
                             </ul>
-        
+                        </li>
+                        <li>
+                            <div onClick={() => { showInformation ? setInformation(false) : setInformation(true) }}
+                                activeClassName={styles.active} className={styles.navigation__item}  ><span>Information</span> <i className="fa fa-caret-down"></i></div>
 
-                    </nav>
+                            <ul onClick={close} className={`${styles.navigation__list__dropdown}   ${showInformation ? styles.navigation__list__dropdown__open : ''}`}>
+                                <li >
+                                    <Link to='/information/longterm-apartments'>Longterm Apartments FAQ</Link>
 
-                </div>
+                                </li>
+                                <li> 
+                                    <Link to='/information/agency-fees'>Agency Fees</Link>
+
+                                </li>
+                                <li>
+                                    <Link to='/information/bying-property'>Bying Property FAQ</Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li onClick={close}>
+                            <Link activeClassName={styles.active} className={styles.navigation__item} to='/contacts'>Contacts</Link>
+
+                        </li>
+                        <button onClick={close} onClick={onOpenModal} className={styles.signIn}>
+                            <i className="fa fa-sign-in" /><span>Sign in</span>
+                        </button>
+                    </ul>
+                </nav>
             </div>
         </div>
+
     )
 }
 

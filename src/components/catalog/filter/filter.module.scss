@@ -1,10 +1,40 @@
-
+ 
+.down{
+  transition: .5s;
+  transform: rotate(90deg);
+}
+.right{
+  transition: .5s;
+  transform: rotate(0deg);
+}
 .form{
     background-color: var(--search-area-bg);
     box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
     color: var( --text-color-dark);
+    position: sticky;
+    top: 0;
+    &__show{ 
+      display: none;
+      width: 100%;
+      background: var(--dark-bg-color);
+      padding: 10px 0;
+      font-weight: bold;
+      cursor: pointer;
+      transition-duration: .5s;
+      &:hover{
+        background: var( --main-design-color);
+        color: white
+
+      }
+    }
 }
 .filter{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    max-height: 1900px; 
+    transition-property: all;
+    transition-duration: 1s;
+ 
     &_type{
         width: 100%; 
         padding: 10px 0;
@@ -18,9 +48,19 @@
             padding-right: 16px;
             display: flex; 
             justify-content: space-between;
+            cursor: pointer;
         } 
-        ul{  
-            li{ 
+        &__block{
+          overflow-y: hidden;
+          max-height: 500px; 
+          transition-property: all;
+          transition-duration: .7s;
+          &__closed{
+            max-height: 0;
+          }
+        }
+        ul{
+            li{  
                 padding: 5px;
             }
         }
@@ -93,8 +133,10 @@
             display: flex;
             justify-content: space-between;
             &__input{
+                width: 60%;
                 border: none;
                 padding: 5px 10px;
+                border: 1px solid whitesmoke;
             }
             &__submit{
                 border: none;
@@ -124,8 +166,37 @@
         }
     }
     &__wrapper{
+        min-width: 16em;
         padding: 1em;
     }
 }
 
+@media (max-width: 768px){
+  .form{
+    &__show{
+      display: block;
+    }
+  }
+  .filter{
+    &__closed{
+      max-height: 0;
+    }
+
+  }
+}
+@media (max-width: 500px){
+  .filter{
+  &_type{
+    &_search{
+      display: block;
+      text-align: center;
+      &__input{
+        padding-right: 2%;
+        padding-left: 2%;
+        margin-bottom: 1em;
+        width: 96%;
+      }
  
+    }
+  }}
+}

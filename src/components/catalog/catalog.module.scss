@@ -2,14 +2,22 @@
     &_container{
     display: flex; 
     padding-bottom: 3em;
+    padding-top: 1em;
+
     }
 }
 
 .right{
+    position: relative;
+    display: grid;
+    grid-template-rows: 4em auto 3.1em ;
+    min-height: 100px;
     width: 100%;
     padding-left: 3em;
 }
-
+.properties{
+    width: 100%;
+}
 
 
 @media (max-width: 768px){

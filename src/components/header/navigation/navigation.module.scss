@@ -3,14 +3,9 @@
     display: flex;
     align-items: center;
 }
- 
-.navigation{
-    width: 100%;   
-    display: flex; 
-    position: relative;
-    justify-content: space-between;
-    font-weight: bold;
-    // border-bottom: 1px solid #000;
+.navigation{  
+    position: relative; 
+    font-weight: bold; 
     &__logo{
         font-size: 3em;
         font-family: 'Girassol', cursive;
@@ -21,70 +16,15 @@
             font-size: 0.5em;
             color: black;
         }
-    }
-
-    &__list{
+    } 
+    &__list{ 
         display: flex;
         align-items: center;
         color: var(--text-color-dark);
-        li{ 
-            span{
-                transition: 0.5s;
-            }
-            i{ 
-                transform: rotate(-90deg);
-                transition: 0.5s;
-            }
-            >ul{
-                position: absolute;
-                z-index: 11;
-                bottom: 0;
-                transform: translateY(100%);
-                display: none;
-                box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
-                background: var(--main-bg-color);
-                li{
-                    position: relative;
-                    padding: 1.3em 2em 1.3em 2em;
-                    text-align: left;
-                    &:hover::before{
-                        position: absolute;
-                        content: '';
-                        top: 0;
-                        left: 0;
-                        width: 0.3em;
-                        height: 100%;
-                        background: var(--main-design-color);
-                    }
-                    &:hover{
-                        > a{
-                            color: var(--main-design-color);
-                        }
-                    }
-                }
-            }
-            &:hover{
-                > ul{
-                    display: block;
-                }
-            }
-        }
-    }
-    &__item{
-        padding: 2em 1em 1.8em;
-        position: relative; 
-        display: block;
-        transition: .5s;
-        color: var(--text-color-dark); 
-        >ul{
-            position: absolute;
-            z-index: 11;
-            bottom: 0;
-            transform: translateY(100%);
-            display: none;
-            box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+        &__dropdown{ 
+            display: none; 
             background: var(--main-bg-color);
-            li{
+            li{ 
                 position: relative;
                 padding: 1.3em 2em 1.3em 2em;
                 text-align: left;
@@ -104,6 +44,24 @@
                 }
             }
         }
+        li{ 
+            cursor: pointer;
+            span{
+                transition: 0.5s;
+            }
+            i{ 
+                transform: rotate(-90deg);
+                transition: 0.5s;
+            }
+
+        }
+    }
+    &__item{
+        position: relative;
+        padding: 2em 1em 1.8em; 
+        display: block;
+        transition: .5s;
+        color: var(--text-color-dark);
 
         &:hover{
             color: var(--main-design-color); 
@@ -113,11 +71,6 @@
             i{
                 color: var(--main-design-color); 
                 transform: rotate( 0deg);  
-            }
-        }
-        &:hover{
-            > ul{
-                display: block;
             }
         }
         &:hover::before{
@@ -174,10 +127,17 @@
     opacity: 0;
 }
 
-
- 
-
- 
+@keyframes roadRunnerIn {
+    0% {
+      transform:translateX(-1500px) skewX(30deg) scaleX(1.3);
+    }
+    50% {
+        transform:translateX(-0px) skewX(0deg) scaleX(1);
+    }
+    100% {
+        transform:translateX(-7px) skewX(0deg) scaleX(1);
+    }
+}
 @media (max-width: 823px){
     .navigation__item{ 
         padding-right: 0.6em;
@@ -190,23 +150,10 @@
         margin-left: 2em;
     }
 }
-
-@keyframes roadRunnerIn {
-    0% {
-      transform:translateX(-1500px) skewX(30deg) scaleX(1.3);
-    }
-    50% {
-        transform:translateX(-0px) skewX(0deg) scaleX(1);
-    }
-    100% {
-        transform:translateX(-7px) skewX(0deg) scaleX(1);
-    }
-}
-
 @media (max-width: 768px){
  
     .navigation{ 
-        display: block;
+        // display: block;
         &__list{
             animation: roadRunnerIn .7s cubic-bezier(0.165, 0.840, 0.83, 1.00) both;
             width: 300px;
@@ -218,38 +165,40 @@
             z-index: 33;
             display: none;
             align-items: center;
-            border-radius: 0px 0px 27px 0px;
-
+            border-radius: 0px 0px 27px 0px; 
+            &__dropdown{
+                display: block;
+                overflow-y: hidden;
+                overflow-x: hidden;
+                max-height: 300px; 
+                transition-property: all;
+                transition-duration: 0.7s;
+                &__open{
+                    display: block;
+                    max-height: 0;
+                }
+            }
         }
         &__item{ 
             transition: all ease-in .4s;
             text-align: left;
             padding-left: 4em;
-            
-
+            &__open{
+                display: block;
+            }
+        }
+        li{  
             >ul{
-                position: relative;
-                transform: translateY(0);
-                width: 100%;
-                box-shadow: none;
-                margin: 0 auto;
-                li{
-                    position: relative;
-                    text-align: left;
-                    width: 100%;
-                    padding-left: 0;
-                    padding-right: 0; 
-                    padding: 1.3em 0em 0em 0em;
-                    &:hover::before{
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height:  0.3em;
-                    }
-                    i{
-                        position: relative; 
-                    }
-            }}
+                
+                position: relative;    
+                li{ 
+                    padding-left: 4em; 
+                    &:hover::before{ 
+                        width:100% ;
+                        height: 0.3em; 
+                    } 
+                }
+            }
         }
     }
     .wrapper{
@@ -321,4 +270,29 @@
             }
         }
     } 
+}
+
+@media (min-width: 768px){
+    .navigation{
+        width: 100%;   
+        display: flex; 
+        justify-content: space-between;
+        &__list{
+            &__dropdown{
+                position: absolute;
+                z-index: 11;
+                bottom: 0;
+                transform: translateY(100%);
+                box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+  
+            }
+            li{
+                &:hover{    
+                    >ul{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
 }

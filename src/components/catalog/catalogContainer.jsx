@@ -3,19 +3,16 @@ import Catalog from './catalog';
 import {connect} from 'react-redux';
 
 
- 
-
 let mapStateToProps = (state) =>{
     return{
       state: state.properties,
-      
     }
 }
   
 
 let mapDispatchToProps = (dispatch) =>{
     return{
-      
+    
     }
 }
 

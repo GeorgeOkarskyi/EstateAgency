@@ -1,0 +1,28 @@
+.pagination{ 
+    display: flex;
+    justify-content: center;
+    &_page{
+        margin: 0 0.5em;
+ 
+        box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+        transition: .5s; 
+        &:hover{
+            background: var(--main-design-color);
+            box-shadow: none;
+            color: white
+        }
+        &__link{
+            padding: 0.5em 1em;
+            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &__active{
+                background: var(--main-design-color);
+                box-shadow: none;
+                color: white
+            }
+        }
+    }
+}
+ 
