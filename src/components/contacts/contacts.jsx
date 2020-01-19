@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './contacts.module.scss';
-import MapContainer from './map/map'
+import MapContainer from '../map/map'
 import 'font-awesome/css/font-awesome.min.css';
 
 
@@ -38,7 +38,10 @@ const Contacts = (props) => {
                         <input className={styles.contacts_form__button} type="submit" value="Send Message"></input>
                     </form>
                 </div>
-                <MapContainer></MapContainer>
+                <div className={styles.map}>
+                    <MapContainer location={{ lat: 49.233772, lng: 28.41100 }}></MapContainer>
+
+                </div>
             </div>
         </div>
     )

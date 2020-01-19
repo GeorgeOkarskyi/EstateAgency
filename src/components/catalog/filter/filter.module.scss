@@ -12,14 +12,14 @@
     box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
     color: var( --text-color-dark);
     position: sticky;
-    top: 0;
-    &__show{ 
+    top: 3.4em;
+    &__show{  
       display: none;
       width: 100%;
       background: var(--dark-bg-color);
       padding: 10px 0;
       font-weight: bold;
-      cursor: pointer;
+      cursor: pointer; 
       transition-duration: .5s;
       &:hover{
         background: var( --main-design-color);

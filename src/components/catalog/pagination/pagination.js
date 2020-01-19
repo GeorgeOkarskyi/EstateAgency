@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './pagination.module.scss'  
+import { Link } from 'react-router-dom';
 
 
-const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage, loading }) => {
-  if (loading) {
+const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage, isLoading }) => {
+  if (isLoading) {
     return ( null )
   }
   const pageNumbers = [];
@@ -25,12 +26,12 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage, loading }
         </li>
         {pageNumbers.map(number => (
           <li key={number} className={styles.pagination_page}>
-            <a onClick={(e) => {e.preventDefault(); paginate(number)}} 
-                href='!#' 
+            <Link  to={`/catalog/${number}`} onClick={(e) => {  paginate(number)}} 
+                 
                 className={`${styles.pagination_page__link}  ${currentPage === number ? styles.pagination_page__link__active: ''}`}
                 >
               {number}
-            </a>
+            </Link>
           </li>
         ))  }
         <li className={styles.pagination_page}>

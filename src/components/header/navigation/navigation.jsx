@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './navigation.module.scss';
 import 'font-awesome/css/font-awesome.min.css';
-import { Link } from 'react-router-dom';
+import {  NavLink} from 'react-router-dom';
 
 
 
@@ -35,56 +35,59 @@ const Navigation = (props) => {
                     </div>
                     <ul className={styles.navigation__list}>
                         <li onClick={close} >
-                            <Link activeClassName={styles.active} className={styles.navigation__item} exact to='/'>Home</Link>
+                            <NavLink activeClassName={styles.active} className={styles.navigation__item}   to='/'>Home</NavLink>
                         </li>
                         <li onClick={close}>
-                            <Link activeClassName={styles.active} className={styles.navigation__item} to='/catalog'>Catalog</Link>
+                            <NavLink activeClassName={styles.active} className={styles.navigation__item} to='/catalog'>Catalog</NavLink>
                         </li>
                         <li>
                             <div onClick={() => { showServices ? setServices(false) : setServices(true) }}
-                                activeClassName={styles.active}
+                                
                                 className={`${styles.navigation__item}`}  ><span>Services</span> <i className="fa fa-caret-down"></i></div>
 
                             <ul onClick={close} className={`${styles.navigation__list__dropdown}  ${showServices ? styles.navigation__list__dropdown__open : ''} `}>
                                 <li> 
-                                    <Link to='/services/apartments-for-rent'>Apartments For Rent</Link>
+                                    <NavLink to='/services/apartments-for-rent'>Apartments For Rent</NavLink>
 
                                 </li>
                                 <li>
-                                    <Link to='/services/apartments-for-sale'>Apartments For Sale</Link>
+                                    <NavLink to='/services/apartments-for-sale'>Apartments For Sale</NavLink>
 
                                 </li>
                                 <li> 
-                                    <Link to='/services/selling-property'>Selling a property</Link>
+                                    <NavLink to='/services/selling-property'>Selling a property</NavLink>
 
                                 </li>
                             </ul>
                         </li>
                         <li>
                             <div onClick={() => { showInformation ? setInformation(false) : setInformation(true) }}
-                                activeClassName={styles.active} className={styles.navigation__item}  ><span>Information</span> <i className="fa fa-caret-down"></i></div>
+                                 className={styles.navigation__item}  ><span>Information</span> <i className="fa fa-caret-down"></i></div>
 
                             <ul onClick={close} className={`${styles.navigation__list__dropdown}   ${showInformation ? styles.navigation__list__dropdown__open : ''}`}>
                                 <li >
-                                    <Link to='/information/longterm-apartments'>Longterm Apartments FAQ</Link>
+                                    <NavLink to='/information/longterm-apartments'>Longterm Apartments FAQ</NavLink>
 
                                 </li>
                                 <li> 
-                                    <Link to='/information/agency-fees'>Agency Fees</Link>
+                                    <NavLink to='/information/agency-fees'>Agency Fees</NavLink>
 
                                 </li>
                                 <li>
-                                    <Link to='/information/bying-property'>Bying Property FAQ</Link>
+                                    <NavLink to='/information/bying-property'>Bying Property FAQ</NavLink>
                                 </li>
                             </ul>
                         </li>
                         <li onClick={close}>
-                            <Link activeClassName={styles.active} className={styles.navigation__item} to='/contacts'>Contacts</Link>
+                            <NavLink activeClassName={styles.active} className={styles.navigation__item} to='/contacts'>Contacts</NavLink>
 
                         </li>
-                        <button onClick={close} onClick={onOpenModal} className={styles.signIn}>
+                        <li onClick={close}>
+                            <button  onClick={onOpenModal} className={styles.signIn}>
                             <i className="fa fa-sign-in" /><span>Sign in</span>
-                        </button>
+                            </button>
+                        </li>
+
                     </ul>
                 </nav>
             </div>

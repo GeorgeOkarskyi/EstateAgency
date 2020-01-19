@@ -4,8 +4,7 @@ import styles from './rangeSlider.module.scss';
 
 
 const RagneSlider = (props) => {
- 
- 
+   
 
     let fromSlider = React.createRef();
     let toSlider = React.createRef();

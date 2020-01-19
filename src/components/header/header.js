@@ -4,11 +4,11 @@ import NavigationContainer from './navigation/navigationContainer'
 
 const Header = () => {
     return (
-        <div>
+ 
             <header className={styles.header}>
                 <NavigationContainer /> 
             </header>
-        </div>
+ 
     )
 }
 

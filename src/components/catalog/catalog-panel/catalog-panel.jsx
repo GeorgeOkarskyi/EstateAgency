@@ -5,8 +5,8 @@ import styles from './catalog-panel.module.scss';
 
 
 
-const CatalogPanel = ({length, loading}) => {
-    if (loading) {
+const CatalogPanel = ({length, isLoading}) => {
+    if (isLoading) {
         return ( null )
     }
     return (
@@ -15,7 +15,7 @@ const CatalogPanel = ({length, loading}) => {
             <div className={styles.sorting_wrapper}>
                 <h4 className={styles.sorting__title}>Sort:</h4>
                 <select className={styles.sorting_select}>
-                    <option className={styles.sorting_select__option} selected value="select">select</option>
+                    <option className={styles.sorting_select__option} defaultValue="select">select</option>
                     <option className={styles.sorting_select__option} value="by price (min - max)">by price (min - max)</option>
                     <option className={styles.sorting_select__option} value="by price (max - min)">by price (max - min)</option>
                 </select>

@@ -7,7 +7,7 @@ import catalogReducer from './reducers/catalog-reducer';
 let reducers = combineReducers({
     modal: modalReducer,
     filter: filterReducer,
-    properties: catalogReducer
+    catalog: catalogReducer
 });
 
 let store = createStore(reducers);

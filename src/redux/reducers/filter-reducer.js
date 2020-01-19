@@ -18,24 +18,24 @@ let initialState = {
         }
 }
 
-const filterReducer = (state = initialState, action) => {
-
+const filterReducer = (state = initialState, action) => { 
     switch (action.type){
         case CHANGE_PRICE_FROM_TEXT:{
             let stateCopy = {
                 ...state,
                 inputs: {
-                    priceSlider: {...state.inputs.priceSlider}
+                    priceSlider: {...state.inputs.priceSlider },
+                    areaSlider: {...state.inputs.areaSlider}
                 }
-            }
-            console.log(stateCopy);
+            } 
             stateCopy.inputs.priceSlider.from = action.priceFrom; 
             return stateCopy}
         case CHANGE_PRICE_TO_TEXT:{
             let stateCopy = {
                 ...state,
                 inputs: {
-                    priceSlider: {...state.inputs.priceSlider}
+                    priceSlider: {...state.inputs.priceSlider},
+                    areaSlider: {...state.inputs.areaSlider}
                 }
             }
             stateCopy.inputs.priceSlider.to = action.priceTo; 
@@ -44,7 +44,8 @@ const filterReducer = (state = initialState, action) => {
             let stateCopy = {
                 ...state,
                 inputs: {
-                    areaSlider: {...state.inputs.areaSlider}
+                    areaSlider: {...state.inputs.areaSlider},
+                    priceSlider: {...state.inputs.priceSlider }
                 }
             }
             stateCopy.inputs.areaSlider.from = action.areaFrom; 
@@ -53,7 +54,8 @@ const filterReducer = (state = initialState, action) => {
             let stateCopy = {
                 ...state,
                 inputs: {
-                    areaSlider: {...state.inputs.areaSlider}
+                    areaSlider: {...state.inputs.areaSlider},
+                    priceSlider: {...state.inputs.priceSlider }
                 }
             }
             stateCopy.inputs.areaSlider.to = action.areaTo; 

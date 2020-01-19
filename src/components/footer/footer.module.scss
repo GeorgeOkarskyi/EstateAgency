@@ -1,13 +1,15 @@
 .footer{
-    padding: 2em 0;
+    padding: 0.5em 0;
     background: var(--dark-bg-color); 
     color: var(--text-color-light);
+ 
     &_container{
         display: flex;
         align-items: top;
-        justify-content: space-between;
+        justify-content: space-around;
     }
     &_social{
+        min-width: 9em;
         display: flex;
         justify-content: space-around;
         &__item{
@@ -22,13 +24,17 @@
         }
     }
     &__item{
+        // font-size: 0.6em;
+        display: flex;
+        align-items: center;
         text-align: left; 
-        line-height: 1.4;
+        line-height: 1.1;
         max-width: 16em;
     }
     &_list{
-
+        
         &__item{
+            
             color: var(--text-color-dark);
             position: relative;
             cursor: pointer;
@@ -49,7 +55,7 @@
         text-transform: uppercase;
     }
     &__logo{
-        font-size: 3em;
+        font-size: 2.2em;
         font-family: 'Girassol', cursive; 
         padding: 0.3em 0;
         line-height: 1;
@@ -69,6 +75,7 @@
             display: block; 
         }
         &__item{
+            display: block;
             padding-top: 1em;
             width: 100%;
             max-width: none;

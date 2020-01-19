@@ -3,12 +3,12 @@ import LongtermApartments from './agency-fees/agency-fees';
 import ByingProperty from './bying-property/bying-property';
 import AgencyFees from './longterm-apartments/longterm-apartments';
 import { Link } from 'react-router-dom';
-import { BrowserRouter as Router, Route, useRouteMatch, Switch } from 'react-router-dom';
+import { Route, useRouteMatch, Switch } from 'react-router-dom';
 
 
 
 const Information = () => {
-    let { path, url } = useRouteMatch();
+    let { path  } = useRouteMatch();
 
     return (
         <div className="container">

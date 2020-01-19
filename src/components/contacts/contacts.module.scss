@@ -6,6 +6,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 1em;
     }
     &__title{
         font-style: normal;
@@ -86,7 +87,9 @@
             }
         }
     }
-
+.map{
+    height: 32em;
+}
 
     @media (max-width: 550px){
         .contacts{

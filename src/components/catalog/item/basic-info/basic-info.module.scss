@@ -1,0 +1,26 @@
+.info{ 
+    font-size: 0.8em;
+    &_top{
+
+        text-align: left;
+        display: grid;
+        grid-template-columns: 1fr  1fr 1fr;
+        grid-gap: 1px;
+        &__item{
+            padding: 1.3em;
+            &__title{
+                margin-bottom: 0.3em;
+                font-size: 1.4em;
+            }
+        }
+        
+    }
+    &_description{
+        padding: 1.3em;
+        text-align: left;
+        &__title{
+            font-size: 1.4em;
+
+        }
+    }
+}
