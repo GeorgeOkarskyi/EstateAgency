@@ -3,18 +3,25 @@ import Item from './item.jsx'
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
-import {setPropertyActionCreator, setLoadingActionCreator } from '../../../redux/reducers/property-reducer'
+import {setPropertyActionCreator, setLoadingActionCreator, setComentsActionCreator } from '../../../redux/reducers/property-reducer'
 
  
 class ItemContainer extends React.Component{
   componentDidMount() {
     this.props.setLoading(true);
-    axios.get('https://georgeokarskyi.github.io/users/properties.json')
+    axios.get(`http://localhost:3000/properties?id=${this.props.match.params.id}`)
         .then(res => {    
-          console.log(this.props.match.params.id)
-            this.props.setProperty(res.data.find(element => element.id == this.props.match.params.id));
-            this.props.setLoading(false);
+            this.props.setProperty(res.data);
+            setTimeout(() => this.props.setLoading(false), 1000);
+            
         })
+    axios.get(`http://localhost:3000/coments?propertyId=${this.props.match.params.id}`)
+    .then(res => {    
+        this.props.setComents(res.data);
+        setTimeout(() => this.props.setLoading(false), 1000);
+        
+    })
+    
 }
   render (){   
     return(
@@ -29,7 +36,8 @@ class ItemContainer extends React.Component{
 let mapStateToProps = (state) =>{
     return{
       item: state.propertyPage.property,
-      isLoading: state.propertyPage.isLoading
+      isLoading: state.propertyPage.isLoading,
+      coments: state.propertyPage.coments
     }
 }
 
@@ -37,6 +45,9 @@ let mapDispatchToProps = (dispatch) =>{
     return{
       setProperty: (property) =>{ 
         dispatch(setPropertyActionCreator(property));
+      },
+      setComents: (coments) =>{ 
+        dispatch(setComentsActionCreator(coments));
       },
       setLoading: (isLoading) => {
         dispatch(setLoadingActionCreator(isLoading));

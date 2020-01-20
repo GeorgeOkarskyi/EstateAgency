@@ -1,49 +1,55 @@
 import React from 'react'
-import styles from './basic-info.module.scss'
+import styles from './basic-info.module.scss' 
 
 
-const BasicInfo = () => {
+const BasicInfo = ({item}) => {
+    function isEmpty(obj) {
+        for(var prop in obj) {
+            if(obj.hasOwnProperty(prop))
+                return false;
+        }
+        return true;
+    } 
+
+   if(isEmpty(item)){
+    return null
+   }
+
     return (
         <div className={styles.info}> 
             <ul className={styles.info_top}>
                 <li className={styles.info_top__item}>
                     <h4 className={styles.info_top__item__title}>Layout</h4>
-                    <p className={styles.info_top__item__info}>Living Room
-                        Master Bedroom 1
-                        Children's Bedroom / Playroom
-                        Children's Bedroom / Playroom
-                        2 Bathrooms
+                    <p className={styles.info_top__item__info}>{item.layout}</p>
+                </li>
+                <li className={styles.info_top__item}>
+                    <h4 className={styles.info_top__item__title}>Total area {item.area.totalArea} </h4>
+                    <p className={styles.info_top__item__info}>
+                        <span>{item.area.kitchen}kitchen</span>
+                        <span>{item.area.bedroom} living room</span>
                     </p>
                 </li>
                 <li className={styles.info_top__item}>
-                    <h4 className={styles.info_top__item__title}>Total area 120 m2</h4>
-                    <p className={styles.info_top__item__info}>60 m2   living room
-                        15 m2   kitchen
-                    </p>
-                </li>
-                <li className={styles.info_top__item}>
-                    <h4 className={styles.info_top__item__title}>Price  3,000 $</h4>
+                    <h4 className={styles.info_top__item__title}>Price {item.price} </h4>
                     <p className={styles.info_top__item__info}>For 1 м2 25 $</p>
                 </li>
             </ul>
-            <p className={styles.info_description}>
+            <div className={styles.info_description}>
                 <h4 className={styles.info_description__title}>Description</h4>
-                Modern three-bedroom apartment (120 m2) in the living complex Novopecherskie Lipki. Fully renovated, dining room, 3 bedrooms, 2 bathrooms, jacuzzi, heated floor. Elevator access directly to the underground parking. Security.
-            </p>
+                <p>{item.description}</p>
+            </div>
             <ul className={styles.info_top}>
                 <li className={styles.info_top__item}>
                     <h4 className={styles.info_top__item__title}>Building</h4>
-                    <p className={styles.info_top__item__info}>10 floor of 30
-2000's - up
-                    </p>
+                    <p className={styles.info_top__item__info}>{item.building}</p>
                 </li>
                 <li className={styles.info_top__item}>
                     <h4 className={styles.info_top__item__title}>Layout</h4>
-                    <p className={styles.info_top__item__info}>Studio</p>
+                    <p className={styles.info_top__item__info}>{item.layoutType}</p>
                 </li>
                 <li className={styles.info_top__item}>
                     <h4 className={styles.info_top__item__title}>Renovation</h4>
-                    <p className={styles.info_top__item__info}>1-2 Years Old</p>
+                    <p className={styles.info_top__item__info}>{item.renovation}</p>
                 </li>
             </ul>
         </div>

@@ -211,15 +211,14 @@
         // max-width: 50px;
     }
     .toggler, .hamburger{
-        position: absolute;
-        top: -1em;
-        right: 0   ;
-        width: 2.5em;
-        height: 2.5em;
-        z-index: 4;
+        position: absolute; 
+        right: 0;
+        width: 2em;
+        height: 2em; 
+        top: 1em;
+
     }
     .toggler{
-        top: 0.1em;
         z-index: 55;
         &:checked {
             z-index: 33;
@@ -243,11 +242,7 @@
         }
     }
     .hamburger {
-        z-index: 32;
-        top: 0.1em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        z-index: 32; 
         > div {
             position: relative;
             flex: none;
@@ -262,12 +257,12 @@
                 content: '';
                 position: absolute;
                 z-index: 1;
-                top: -12px;
+                top: -8px;
                 width: 100%;
                 padding: 2px 0;
                 background: inherit;}
             &::after {
-                top:  12px ;
+                top:  8px ;
             }
         }
     } 

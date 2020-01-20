@@ -12,7 +12,7 @@ const Properties = ({ properties, isLoading }) => {
     <ul  >
       {properties.map(property => (
           <Link to={`/item/${property.id}`} property={property}   key={property.id} className={styles.item}>
-            <img className={styles.item__image} src={property.image} alt="" />
+            <img className={styles.item__image} src={property.images[0].thumbnail} alt={property.location} />
             <div className={styles.item_describtion}>
                 <p className={styles.item_describtion__overflow}>{property.description}</p>
                 <p className={styles.item_describtion__map} href="/#"><i className="fa fa-map-marker"></i>{property.city}</p>
@@ -24,7 +24,6 @@ const Properties = ({ properties, isLoading }) => {
                 <p className={styles.item_describtion__area}>{property.totalArea}</p>
             </div>
         </Link>
-      
       ))}
     </ul>
   );

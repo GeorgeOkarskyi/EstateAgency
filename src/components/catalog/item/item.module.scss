@@ -34,6 +34,8 @@
     &_about{
         background: white;
         width: 40%; 
+        display: grid;
+        grid-template-rows: 1fr ;
         &_nav{
             background: var(--search-area-bg);
 

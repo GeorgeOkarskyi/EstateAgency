@@ -9,7 +9,7 @@ class catalogAPIComponent extends React.Component {
 
     componentDidMount() {
         this.props.setLoading(true);
-        axios.get('https://georgeokarskyi.github.io/users/properties.json')
+        axios.get('http://localhost:3000/properties')
             .then(res => {  
                 this.props.setProperties(res.data);
                 this.props.setLoading(false);
