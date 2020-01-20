@@ -1,7 +1,7 @@
 import React from 'react';
 import './normalize/Normalize.css'
 import './App.css';
-import { Route, Switch} from 'react-router-dom';
+import { Route, Switch, Redirect} from 'react-router-dom';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import Contacts from './components/contacts/contacts';
@@ -20,6 +20,11 @@ function App() {
       <ModalContainer />
       <Header />
       <Switch>
+      <Redirect exact from={`/`} to={`/home`} />
+
+        <Route exact path="/home" render={() =>
+          <SliderView ></SliderView>}>
+        </Route>
         <Route path='/contacts' render={() =>
           <Contacts ></Contacts>}>
         </Route>
@@ -29,15 +34,13 @@ function App() {
         <Route path='/services' render={() =>
           <Services></Services>}>
         </Route>
-        <Route   path='/catalog' render={() =>
+        <Route path='/catalog' render={() =>
           <CatalogContainer ></CatalogContainer>}>
         </Route>
         <Route path='/item/:id' render={() =>
           <ItemContainer ></ItemContainer>}>
         </Route>
-        <Route exact path='/' render={() =>
-          <SliderView ></SliderView>}>
-        </Route>
+
       </Switch>
       <Footer></Footer>
     </div>

@@ -27,15 +27,15 @@ const Navigation = (props) => {
             <div className={styles.wrapper}>
                 <nav className={styles.navigation}>
                     <div className={styles.navigation__logo}>
-                        <a href="/#">the<span>agency</span></a>
+                        <NavLink  to='/'>the<span>agency</span></NavLink>
                     </div>
                     <input ref={checkbox} type="checkbox" className={styles.toggler}></input>
                     <div className={styles.hamburger}>
                         <div></div>
                     </div>
                     <ul className={styles.navigation__list}>
-                        <li onClick={close} >
-                            <NavLink activeClassName={styles.active} className={styles.navigation__item}   to='/'>Home</NavLink>
+                        <li className={styles.navigation__list__home} onClick={close} >
+                            <NavLink   className={styles.navigation__item} to='/'>Home</NavLink>
                         </li>
                         <li onClick={close}>
                             <NavLink activeClassName={styles.active} className={styles.navigation__item} to='/catalog'>Catalog</NavLink>

@@ -21,6 +21,7 @@
         display: flex;
         align-items: center;
         color: var(--text-color-dark);
+        
         &__dropdown{ 
             display: none; 
             background: var(--main-bg-color);
@@ -279,6 +280,9 @@
         justify-content: space-between;
         align-items: center;
         &__list{
+            &__home{
+                display: none;
+            }
             &__dropdown{
                 position: absolute;
                 z-index: 11;
