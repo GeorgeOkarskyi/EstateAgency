@@ -45,7 +45,7 @@ const Item = (props) => {
                                 <BasicInfo item={props.item} ></BasicInfo>}>
                             </Route>
                             <Route path={`${props.match.url}/details`} render={() =>
-                                <Comments coments={props.coments}></Comments>
+                                <Comments addComment={props.addComment} coments={props.coments}></Comments>
                             }>
                             </Route>
                             <Route path={`${props.match.url}/location`} render={() =>

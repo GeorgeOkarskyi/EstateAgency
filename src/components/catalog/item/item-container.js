@@ -3,7 +3,7 @@ import Item from './item.jsx'
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
-import {setPropertyActionCreator, setLoadingActionCreator, setComentsActionCreator } from '../../../redux/reducers/property-reducer'
+import {setPropertyActionCreator, setLoadingActionCreator, setComentsActionCreator,addCommentActionCreator } from '../../../redux/reducers/property-reducer'
 
  
 class ItemContainer extends React.Component{
@@ -51,6 +51,9 @@ let mapDispatchToProps = (dispatch) =>{
       },
       setLoading: (isLoading) => {
         dispatch(setLoadingActionCreator(isLoading));
+      },
+      addComment: (coment) => {
+        dispatch(addCommentActionCreator(coment));
       }
     }
 }
