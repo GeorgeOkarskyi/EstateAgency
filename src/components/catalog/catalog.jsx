@@ -2,12 +2,12 @@
 import CatalogPanel from './catalog-panel/catalog-panel'; 
 import Pagination from './pagination/pagination';
 import styles from './catalog.module.scss';
-import FilterContainer from './filter/filter-container'
+import Filter  from './filter/filter'
 import React from 'react';  
 import Properties from './properties/properties';
 
 
-const Catalog = ({postsPerPage , properties, isLoading,  currentPage, setCurrentPage}) => {  
+const Catalog = ({postsPerPage , properties, isLoading,  currentPage, setCurrentPage, sortingProperties, checkboxes, filterByBedrooms, filterByLastRenovation}) => {  
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -18,10 +18,10 @@ const Catalog = ({postsPerPage , properties, isLoading,  currentPage, setCurrent
         <div className="container">
             <div className={styles.catalog_container}>
                 <div className={styles.filter}>
-                    <FilterContainer ></FilterContainer>
+                    <Filter filterByLastRenovation={filterByLastRenovation} filterByBedrooms={filterByBedrooms} checkboxes={checkboxes}></Filter>
                 </div>
                 <div className={styles.right}>
-                    <CatalogPanel isLoading={isLoading} length={`${properties.length}`}></CatalogPanel>
+                    <CatalogPanel sortingProperties={sortingProperties} isLoading={isLoading} length={`${properties.length}`}></CatalogPanel>
                     <Properties properties={currentPosts} isLoading={isLoading} />
                     <Pagination
                         postsPerPage={postsPerPage}

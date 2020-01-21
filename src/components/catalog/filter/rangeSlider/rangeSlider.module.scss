@@ -63,7 +63,6 @@
             }
         }
         &__submit{
-
             background: var(--dark-bg-color);
             border: none;
             color: #fff;
@@ -71,6 +70,7 @@
             padding: 0.3em 0.7em;
             border-radius: 5px;
             transition: .5s;
+            cursor: pointer;
             &:hover{
                 background: var(--main-design-color);
             }

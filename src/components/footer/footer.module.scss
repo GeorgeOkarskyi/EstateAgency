@@ -2,7 +2,11 @@
     padding: 0.5em 0;
     background: var(--dark-bg-color); 
     color: var(--text-color-light);
- 
+    &_fixed{
+        position: sticky;
+        bottom: 0;
+        display: none;
+    }
     &_container{
         display: flex;
         align-items: top;

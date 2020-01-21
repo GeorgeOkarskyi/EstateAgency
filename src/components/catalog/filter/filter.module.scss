@@ -132,6 +132,7 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+
             &__input{
                 width: 60%;
                 border: none;
@@ -145,6 +146,7 @@
                 color: white;
                 border-radius: 5px;
                 transition: .5s;
+                cursor: pointer;
                 &:hover{
                     background: var(--main-design-color);
                 }
@@ -161,6 +163,8 @@
         text-transform: uppercase;
         background: var(--dark-bg-color);
         transition: .5s;
+        cursor: pointer;
+
         &:hover{
             background: var(--main-design-color);
         }

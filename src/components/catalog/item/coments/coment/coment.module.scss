@@ -2,10 +2,9 @@
     margin: 0.7em;
     padding: 0.3em;
     border-radius: 0.4em;
-    background: var(--search-area-bg);
-    text-align: left;
-    &__text{
-        text-align: right;
+    background: var(--search-area-bg); 
+    text-align: left; 
+    &__text{ 
     }
     &__published{
         font-size: 0.7em;

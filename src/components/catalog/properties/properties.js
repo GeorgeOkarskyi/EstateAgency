@@ -19,9 +19,9 @@ const Properties = ({ properties, isLoading }) => {
                 <p>{property.location}</p>
             </div>
             <div className={styles.item_describtion}>
-                <p className={styles.item_describtion__price}>{property.price}</p>
+                <p className={styles.item_describtion__price}>{property.price}$</p>
                 <p className={styles.item_describtion__type}>{property.layoutType}</p>
-                <p className={styles.item_describtion__area}>{property.totalArea}</p>
+                <p className={styles.item_describtion__area}>{property.area.totalArea} m2</p>
             </div>
         </Link>
       ))}

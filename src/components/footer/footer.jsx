@@ -4,7 +4,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import { NavLink } from 'react-router-dom';
 
 
-const Footer = (props) => {
+const Footer = () => {
     return (
         <div className={styles.footer_fixed}>
             <footer className={styles.footer}>

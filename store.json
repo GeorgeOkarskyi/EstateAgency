@@ -19,14 +19,14 @@
             "description": "Beautiful two-bedroom apartment (150 m2) on Dimitrova 4. Fully renovated, 1 balcony, 2 bathrooms (shower, bathtub, washing machine, heated floors). Elevator access directly to the underground parking. Registration.",
             "layout": "Living Room,  Master Bedroom, 1 Guest Bedroom, 2 Bathrooms",
             "area": {
-                "totalArea": "150 m2",
-                "kitchen": "50 m2",
-                "bedroom": "100 m2"
+                "totalArea": "150",
+                "kitchen": "50",
+                "bedroom": "100"
             },
-            "price": "2,700 $",
+            "price": "2700",
             "renovation": "Brand New",
-            "building": "8 floor of 25 2000's - up No elevator",
-            "layoutType": "studio",
+            "building": "2000's - up",
+            "layoutType": "penthouse",
             "location": "kyiv, 25, delovaya street",
             "city": "kyiv",
             "coordinates": {
@@ -53,11 +53,453 @@
             "description": "Beautiful two-bedroom apartment (150 m2) on Dimitrova 4. Fully renovated, 1 balcony, 2 bathrooms (shower, bathtub, washing machine, heated floors). Elevator access directly to the underground parking. Registration.",
             "layout": "Living Room,  Master Bedroom, 1 Guest Bedroom, 2 Bathrooms",
             "area": {
-                "totalArea": "150 m2",
-                "kitchen": "50 m2",
-                "bedroom": "100 m2"
+                "totalArea": "150",
+                "kitchen": "50",
+                "bedroom": "100"
             },
-            "price": "2,700 $",
+            "price": "2800",
+            "renovation": "Brand New",
+            "building": "pre-1930's",
+            "layoutType": "1 bedroom",
+            "location": "kyiv, 25, delovaya street",
+            "city": "kyiv",
+            "coordinates": {
+                "lat": 48.233772,
+                "lng": 28.41100
+            }
+        },
+        {
+            "id": "1112",
+            "images": [
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                }
+            ],
+            "description": "Beautiful two-bedroom apartment (150 m2) on Dimitrova 4. Fully renovated, 1 balcony, 2 bathrooms (shower, bathtub, washing machine, heated floors). Elevator access directly to the underground parking. Registration.",
+            "layout": "Living Room,  Master Bedroom, 1 Guest Bedroom, 2 Bathrooms",
+            "area": {
+                "totalArea": "150",
+                "kitchen": "50",
+                "bedroom": "100"
+            },
+            "price": "2900",
+            "renovation": "Brand New",
+            "building": "1930's-1950's",
+            "layoutType": "2 bedrooms",
+            "location": "kyiv, 25, delovaya street",
+            "city": "kyiv",
+            "coordinates": {
+                "lat": 48.233772,
+                "lng": 28.41100
+            }
+        },
+        {
+            "id": "1113",
+            "images": [
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                }
+            ],
+            "description": "Beautiful two-bedroom apartment (150 m2) on Dimitrova 4. Fully renovated, 1 balcony, 2 bathrooms (shower, bathtub, washing machine, heated floors). Elevator access directly to the underground parking. Registration.",
+            "layout": "Living Room,  Master Bedroom, 1 Guest Bedroom, 2 Bathrooms",
+            "area": {
+                "totalArea": "150",
+                "kitchen": "50",
+                "bedroom": "100"
+            },
+            "price": "3000",
+            "renovation": "Brand New",
+            "building": "1970's-1990's",
+            "layoutType": "3 bedrooms",
+            "location": "kyiv, 25, delovaya street",
+            "city": "kyiv",
+            "coordinates": {
+                "lat": 48.233772,
+                "lng": 28.41100
+            }
+        },
+        {
+            "id": "1114",
+            "images": [
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                }
+            ],
+            "description": "Beautiful two-bedroom apartment (150 m2) on Dimitrova 4. Fully renovated, 1 balcony, 2 bathrooms (shower, bathtub, washing machine, heated floors). Elevator access directly to the underground parking. Registration.",
+            "layout": "Living Room,  Master Bedroom, 1 Guest Bedroom, 2 Bathrooms",
+            "area": {
+                "totalArea": "150",
+                "kitchen": "50",
+                "bedroom": "100"
+            },
+            "price": "3100",
+            "renovation": "Brand New",
+            "building": "1960's-1970's",
+            "layoutType": "4 bedrooms",
+            "location": "kyiv, 25, delovaya street",
+            "city": "kyiv",
+            "coordinates": {
+                "lat": 48.233772,
+                "lng": 28.41100
+            }
+        },
+        {
+            "id": "1115",
+            "images": [
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                }
+            ],
+            "description": "Beautiful two-bedroom apartment (150 m2) on Dimitrova 4. Fully renovated, 1 balcony, 2 bathrooms (shower, bathtub, washing machine, heated floors). Elevator access directly to the underground parking. Registration.",
+            "layout": "Living Room,  Master Bedroom, 1 Guest Bedroom, 2 Bathrooms",
+            "area": {
+                "totalArea": "150",
+                "kitchen": "50",
+                "bedroom": "100"
+            },
+            "price": "3200",
+            "renovation": "1-2 years",
+            "building": "1950's-1960's",
+            "layoutType": "5 bedrooms",
+            "location": "kyiv, 25, delovaya street",
+            "city": "kyiv",
+            "coordinates": {
+                "lat": 48.233772,
+                "lng": 28.41100
+            }
+        },
+        {
+            "id": "1116",
+            "images": [
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                }
+            ],
+            "description": "Beautiful two-bedroom apartment (150 m2) on Dimitrova 4. Fully renovated, 1 balcony, 2 bathrooms (shower, bathtub, washing machine, heated floors). Elevator access directly to the underground parking. Registration.",
+            "layout": "Living Room,  Master Bedroom, 1 Guest Bedroom, 2 Bathrooms",
+            "area": {
+                "totalArea": "150",
+                "kitchen": "50",
+                "bedroom": "100"
+            },
+            "price": "3300",
+            "renovation": "1-2 years",
+            "building": "1990's - 2000's",
+            "layoutType": "6 bedrooms",
+            "location": "kyiv, 25, delovaya street",
+            "city": "kyiv",
+            "coordinates": {
+                "lat": 48.233772,
+                "lng": 28.41100
+            }
+        },
+        {
+            "id": "1117",
+            "images": [
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                }
+            ],
+            "description": "Beautiful two-bedroom apartment (150 m2) on Dimitrova 4. Fully renovated, 1 balcony, 2 bathrooms (shower, bathtub, washing machine, heated floors). Elevator access directly to the underground parking. Registration.",
+            "layout": "Living Room,  Master Bedroom, 1 Guest Bedroom, 2 Bathrooms",
+            "area": {
+                "totalArea": "150",
+                "kitchen": "50",
+                "bedroom": "100"
+            },
+            "price": "3400",
+            "renovation": "3-5 years",
+            "building": "8 floor of 25 2000's - up No elevator",
+            "layoutType": "penthouse",
+            "location": "kyiv, 25, delovaya street",
+            "city": "kyiv",
+            "coordinates": {
+                "lat": 48.233772,
+                "lng": 28.41100
+            }
+        },
+        {
+            "id": "1118",
+            "images": [
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                }
+            ],
+            "description": "Beautiful two-bedroom apartment (150 m2) on Dimitrova 4. Fully renovated, 1 balcony, 2 bathrooms (shower, bathtub, washing machine, heated floors). Elevator access directly to the underground parking. Registration.",
+            "layout": "Living Room,  Master Bedroom, 1 Guest Bedroom, 2 Bathrooms",
+            "area": {
+                "totalArea": "150",
+                "kitchen": "50",
+                "bedroom": "100"
+            },
+            "price": "3500",
+            "renovation": "5+ years",
+            "building": "8 floor of 25 2000's - up No elevator",
+            "layoutType": "townhouse",
+            "location": "kyiv, 25, delovaya street",
+            "city": "kyiv",
+            "coordinates": {
+                "lat": 48.233772,
+                "lng": 28.41100
+            }
+        },
+        {
+            "id": "1119",
+            "images": [
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                }
+            ],
+            "description": "Beautiful two-bedroom apartment (150 m2) on Dimitrova 4. Fully renovated, 1 balcony, 2 bathrooms (shower, bathtub, washing machine, heated floors). Elevator access directly to the underground parking. Registration.",
+            "layout": "Living Room,  Master Bedroom, 1 Guest Bedroom, 2 Bathrooms",
+            "area": {
+                "totalArea": "150",
+                "kitchen": "50",
+                "bedroom": "100"
+            },
+            "price": "3600",
+            "renovation": "Brand New",
+            "building": "8 floor of 25 2000's - up No elevator",
+            "layoutType": "studio",
+            "location": "kyiv, 25, delovaya street",
+            "city": "kyiv",
+            "coordinates": {
+                "lat": 48.233772,
+                "lng": 28.41100
+            }
+        },
+        {
+            "id": "1121",
+            "images": [
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                }
+            ],
+            "description": "Beautiful two-bedroom apartment (150 m2) on Dimitrova 4. Fully renovated, 1 balcony, 2 bathrooms (shower, bathtub, washing machine, heated floors). Elevator access directly to the underground parking. Registration.",
+            "layout": "Living Room,  Master Bedroom, 1 Guest Bedroom, 2 Bathrooms",
+            "area": {
+                "totalArea": "150",
+                "kitchen": "50",
+                "bedroom": "100"
+            },
+            "price": "3700",
+            "renovation": "5+ years",
+            "building": "8 floor of 25 2000's - up No elevator",
+            "layoutType": "studio",
+            "location": "kyiv, 25, delovaya street",
+            "city": "kyiv",
+            "coordinates": {
+                "lat": 48.233772,
+                "lng": 28.41100
+            }
+        },
+        {
+            "id": "1122",
+            "images": [
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                }
+            ],
+            "description": "Beautiful two-bedroom apartment (150 m2) on Dimitrova 4. Fully renovated, 1 balcony, 2 bathrooms (shower, bathtub, washing machine, heated floors). Elevator access directly to the underground parking. Registration.",
+            "layout": "Living Room,  Master Bedroom, 1 Guest Bedroom, 2 Bathrooms",
+            "area": {
+                "totalArea": "150",
+                "kitchen": "50",
+                "bedroom": "100"
+            },
+            "price": "3800",
+            "renovation": "Brand New",
+            "building": "8 floor of 25 2000's - up No elevator",
+            "layoutType": "studio",
+            "location": "kyiv, 25, delovaya street",
+            "city": "kyiv",
+            "coordinates": {
+                "lat": 48.233772,
+                "lng": 28.41100
+            }
+        },
+        {
+            "id": "1123",
+            "images": [
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                }
+            ],
+            "description": "Beautiful two-bedroom apartment (150 m2) on Dimitrova 4. Fully renovated, 1 balcony, 2 bathrooms (shower, bathtub, washing machine, heated floors). Elevator access directly to the underground parking. Registration.",
+            "layout": "Living Room,  Master Bedroom, 1 Guest Bedroom, 2 Bathrooms",
+            "area": {
+                "totalArea": "150",
+                "kitchen": "50",
+                "bedroom": "100"
+            },
+            "price": "3900",
+            "renovation": "Brand New",
+            "building": "8 floor of 25 2000's - up No elevator",
+            "layoutType": "studio",
+            "location": "kyiv, 25, delovaya street",
+            "city": "kyiv",
+            "coordinates": {
+                "lat": 48.233772,
+                "lng": 28.41100
+            }
+        },
+        {
+            "id": "1124",
+            "images": [
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                }
+            ],
+            "description": "Beautiful two-bedroom apartment (150 m2) on Dimitrova 4. Fully renovated, 1 balcony, 2 bathrooms (shower, bathtub, washing machine, heated floors). Elevator access directly to the underground parking. Registration.",
+            "layout": "Living Room,  Master Bedroom, 1 Guest Bedroom, 2 Bathrooms",
+            "area": {
+                "totalArea": "150",
+                "kitchen": "50",
+                "bedroom": "100"
+            },
+            "price": "400",
+            "renovation": "Brand New",
+            "building": "8 floor of 25 2000's - up No elevator",
+            "layoutType": "studio",
+            "location": "kyiv, 25, delovaya street",
+            "city": "kyiv",
+            "coordinates": {
+                "lat": 48.233772,
+                "lng": 28.41100
+            }
+        },
+        {
+            "id": "1125",
+            "images": [
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                },
+                {
+                    "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
+                    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
+                }
+            ],
+            "description": "Beautiful two-bedroom apartment (150 m2) on Dimitrova 4. Fully renovated, 1 balcony, 2 bathrooms (shower, bathtub, washing machine, heated floors). Elevator access directly to the underground parking. Registration.",
+            "layout": "Living Room,  Master Bedroom, 1 Guest Bedroom, 2 Bathrooms",
+            "area": {
+                "totalArea": "150",
+                "kitchen": "50",
+                "bedroom": "100"
+            },
+            "price": "300",
             "renovation": "Brand New",
             "building": "8 floor of 25 2000's - up No elevator",
             "layoutType": "studio",

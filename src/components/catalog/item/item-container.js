@@ -15,12 +15,7 @@ class ItemContainer extends React.Component{
             setTimeout(() => this.props.setLoading(false), 1000);
             
         })
-    axios.get(`http://localhost:3000/coments?propertyId=${this.props.match.params.id}`)
-    .then(res => {    
-        this.props.setComents(res.data);
-        setTimeout(() => this.props.setLoading(false), 1000);
-        
-    })
+ 
     
 }
   render (){   
@@ -46,15 +41,9 @@ let mapDispatchToProps = (dispatch) =>{
       setProperty: (property) =>{ 
         dispatch(setPropertyActionCreator(property));
       },
-      setComents: (coments) =>{ 
-        dispatch(setComentsActionCreator(coments));
-      },
       setLoading: (isLoading) => {
         dispatch(setLoadingActionCreator(isLoading));
-      },
-      addComment: (coment) => {
-        dispatch(addCommentActionCreator(coment));
-      }
+      } 
     }
 }
 let  WithUrlDataContainer = withRouter(ItemContainer)

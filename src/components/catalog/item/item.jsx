@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, Switch, Route, Redirect } from "react-router-dom";
 import styles from './item.module.scss';
 import BasicInfo from './basic-info/basic-info'
-import Comments from './coments/coments'
+import ComentsContainer from './coments/comentsContainer'
 import MapContainer from '../../map/map'
 import Gallery from './gallery/gallery'
 import { LoopCircleLoading } from 'react-loadingg';
@@ -24,7 +24,7 @@ const Item = (props) => {
 
                         </li>
                         <li>
-                            <NavLink activeClassName={styles.active} className={styles.item_about_nav__item} to={`${props.match.url}/details`}>Coments</NavLink>
+                            <NavLink activeClassName={styles.active} className={styles.item_about_nav__item} to={`${props.match.url}/coments`}>Coments</NavLink>
 
                         </li>
                         <li>
@@ -44,8 +44,8 @@ const Item = (props) => {
                             <Route path={`${props.match.url}/basic-info`} render={() =>
                                 <BasicInfo item={props.item} ></BasicInfo>}>
                             </Route>
-                            <Route path={`${props.match.url}/details`} render={() =>
-                                <Comments addComment={props.addComment} coments={props.coments}></Comments>
+                            <Route path={`${props.match.url}/coments`} render={() =>
+                                <ComentsContainer id={props.match.params.id}></ComentsContainer>
                             }>
                             </Route>
                             <Route path={`${props.match.url}/location`} render={() =>

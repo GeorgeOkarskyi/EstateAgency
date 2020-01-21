@@ -23,14 +23,14 @@ const BasicInfo = ({item}) => {
                     <p className={styles.info_top__item__info}>{item.layout}</p>
                 </li>
                 <li className={styles.info_top__item}>
-                    <h4 className={styles.info_top__item__title}>Total area {item.area.totalArea} </h4>
+                    <h4 className={styles.info_top__item__title}>Total area {item.area.totalArea} м2 </h4>
                     <p className={styles.info_top__item__info}>
                         <span>{item.area.kitchen}kitchen</span>
                         <span>{item.area.bedroom} living room</span>
                     </p>
                 </li>
                 <li className={styles.info_top__item}>
-                    <h4 className={styles.info_top__item__title}>Price {item.price} </h4>
+                    <h4 className={styles.info_top__item__title}>Price {item.price} $</h4>
                     <p className={styles.info_top__item__info}>For 1 м2 25 $</p>
                 </li>
             </ul>
