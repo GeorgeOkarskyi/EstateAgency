@@ -1,10 +1,11 @@
 import React from 'react';
+import UnderConstruction from '../../under-construction/under-construction'
+
 
 const ByingProperty = () =>{
     return(
-        <div>
-            <h2>ByingProperty</h2>
-        </div>
+        <UnderConstruction></UnderConstruction>
+
     )
 }
 

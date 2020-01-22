@@ -9,18 +9,27 @@
     display: flex;
     justify-content: center;
     &_item{
-        a{
-            color: white; 
-            background: var(--main-design-color);
+
+        &_ref{
+            color: var(--main-design-color); 
+            border: 1px solid var(--main-design-color);
             display: block; 
             margin: 0.3em;
-            padding: 1.1em 1em;
+            padding: 0.7em 1em;
             font-weight: bold;
             border-radius: 10px;
+            transition: 0.5s;
             &:hover{ 
                 box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+                color: white;
+                background: var(--main-design-color);
 
             }
+        }
+        &_active{
+            background: var(--main-design-color);
+            color: white; 
+            
         }
     }
 }

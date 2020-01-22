@@ -1,0 +1,32 @@
+.inform{
+    padding: 50px 0;
+    &-container{
+        display: flex;
+        justify-content: center;}
+
+    &-item{
+        height: 129px;
+        width: 308px;
+        text-align: center;
+ 
+        &__title{
+            font-style: normal;
+            font-weight: bold;
+            font-size: 22px;
+            line-height: 28px;
+            color:  var(--main-design-color);
+            margin-top: 22px;}
+        &__text{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            color: var(--text-color-dark);
+        }
+        &:nth-child(2){
+            border-left: 1px solid var(--main-design-color);
+            border-right: 1px solid var(--main-design-color);
+        }
+
+        }
+    }

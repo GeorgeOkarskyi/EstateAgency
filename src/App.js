@@ -6,7 +6,7 @@ import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import Contacts from './components/contacts/contacts';
 import CatalogContainer from './components/catalog/catalogContainer';
-import SliderView from './components/header/slider/slider';
+import Home from './components/home/home';
 import ModalContainer from './components/modal/modalContainer';
 import Information from './components/information/information';
 import Services from './components/services/services'
@@ -23,7 +23,7 @@ function App() {
       <Redirect exact from={`/`} to={`/home`} />
 
         <Route exact path="/home" render={() =>
-          <SliderView ></SliderView>}>
+          <Home ></Home>}>
         </Route>
         <Route path='/contacts' render={() =>
           <Contacts ></Contacts>}>

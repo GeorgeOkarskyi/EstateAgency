@@ -1,10 +1,10 @@
 import React from 'react';
+import UnderConstruction from '../../under-construction/under-construction'
 
 const ApartmentsForSale = () =>{
     return(
-        <div>
-            <h2>ApartmentsForSale</h2>
-        </div>
+        <UnderConstruction></UnderConstruction>
+
     )
 }
 

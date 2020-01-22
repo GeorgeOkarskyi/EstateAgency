@@ -1,0 +1,100 @@
+
+ 
+    .slick-prev{
+        left: 2%!important;
+        z-index: 3 !important;  }
+    .slick-next{ 
+        right: 5%!important; 
+         }
+
+    .slick-prev,
+    .slick-next {
+        &:hover{
+            color: black !important;
+
+        }
+        &:before{ 
+            line-height: none;
+            height: 40px;
+            width: 40px;
+            font-size: 30px  !important;
+            font-weight: bold;
+            color: white !important;
+            font-family: none ;
+            &:hover{
+                color: black !important;
+
+            }
+        }
+        }
+ 
+    .slick-dots {
+        display: flex !important;
+        z-index: 5 !important;
+        bottom: 0!important;
+        width: auto!important;
+        left: 50%;
+        transform: translateX(-50%)!important; 
+        height: 40px!important }
+
+    .slick-dots li button:before{ 
+        width: 10px!important;
+        height: 10px!important;
+        color: var(--main-design-color)!important;
+        border: 1px solid white!important;
+        font-size: 0!important;
+        opacity: 1!important;
+        border-radius: 50%!important ;
+    }
+
+
+    .slick-dots li { 
+        width: 10px!important;
+        height: 10px!important;
+        margin-top: 0!important;
+        padding: 0!important}
+
+
+    .slick-dots .slick-active button:before {
+        background: var(--main-design-color)}
+ 
+ 
+ 
+
+
+
+/* 
+
+@media screen and (max-width: 1150px)
+ 
+    .slider
+        .slick-prev
+            left: 2% 
+        .slick-next
+            left: 2%
+ 
+
+@media screen and (max-width: 670px)
+ 
+    .slider
+        .slick-prev,
+        .slick-next 
+            &:before
+                display: none
+        .slick-dots 
+            z-index: 5  
+            top: 100%
+            transform: translateX(-50%)
+            left: 50%
+            width: 100px
+            height: 12px 
+        .slick-dots li button:before 
+ 
+            color: #C4C4C4
+            border: 1px solid #C4C4C4
+            font-size: 0
+            opacity: 1
+            border-radius: 50% 
+        .slick-dots .slick-active button:before 
+            background: #6BBF44
+FIRST slick slider */

@@ -1,0 +1,37 @@
+.inform{
+    padding: 3.1em 0;
+    &-container{
+        display: flex;
+        justify-content: center;}
+
+    &-item{
+        height: 8em;
+        width: 19em;
+        text-align: center;
+        &__icon{
+            svg{
+                fill: var(--main-design-color);
+            }
+        }
+        &__title{
+            font-style: normal;
+            font-weight: bold;
+            font-size: 1.3em;
+            line-height: 1.1em;
+            color:  var(--main-design-color);
+            margin-top: 0.7em;}
+        &__text{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1em;
+            line-height: 1em;
+            // color: $dark-grey;
+        }
+
+        &:nth-child(2){
+            border-left: 1px solid var(--main-design-color);
+            border-right: 1px solid var(--main-design-color);
+        }
+
+        }
+    }

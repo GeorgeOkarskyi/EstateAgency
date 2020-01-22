@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Switch, Link, useRouteMatch} from 'react-router-dom';
+import {Route, Switch, Link, useRouteMatch, NavLink} from 'react-router-dom';
 import ApartmentsForRent from './apartments-for-rent/apartments-for-rent';
 import ApartmentsForSale from './apartments-for-sale/apartments-for-sale';
 import SellingProperty from './selling-property/selling-property';
@@ -14,13 +14,13 @@ const Services = () =>{
             <nav>
                 <ul className={styles.navigation}>
                     <li className={styles.navigation_item}>
-                        <Link to={`apartments-for-rent`}>Apartments For Rent</Link>
+                        <NavLink className={styles.navigation_item_ref} activeClassName={styles.navigation_item_active} to={`apartments-for-rent`}>Apartments For Rent</NavLink>
                     </li>
                     <li className={styles.navigation_item}>
-                        <Link to={`apartments-for-sale`}>Apartments For Sale</Link>
+                        <NavLink className={styles.navigation_item_ref} activeClassName={styles.navigation_item_active} to={`apartments-for-sale`}>Apartments For Sale</NavLink>
                     </li>
                     <li className={styles.navigation_item}>
-                        <Link to={`selling-property`}>Selling a property</Link>
+                        <NavLink className={styles.navigation_item_ref} activeClassName={styles.navigation_item_active} to={`selling-property`}>Selling a property</NavLink>
                     </li>
                 </ul>
             </nav>
