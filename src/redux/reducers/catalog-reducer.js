@@ -4,7 +4,14 @@ const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SORT_PROPERTIES = "SORT_PROPERTIES";
 const SET_CHECKBOX = "SET_CHECKBOX";
 const FILTER_PROPERTIES_BEDROOMS = "FILTER_PROPERTIES_BEDROOMS";
-const FILTER_PROPERTIES_RENOVATION = "FILTER_PROPERTIES_RENOVATION";
+const FILTER_PROPERTIES_PRICE = "FILTER_PROPERTIES_PRICE";
+const CHANGE_PRICE_FROM_TEXT = "CHANGE_PRICE_FROM_TEXT";
+const CHANGE_PRICE_TO_TEXT = "CHANGE_PRICE_TO_TEXT";
+const CHANGE_AREA_FROM_TEXT = "CHANGE_AREA_FROM_TEXT";
+const CHANGE_AREA_TO_TEXT = "CHANGE_AREA_TO_TEXT";
+const FILTER_PROPERTIES_AREA = "FILTER_PROPERTIES_AREA";
+const RESET_FILTER = "RESET_FILTER";
+
 let initialState = {
     current: [],
     filtered: [],
@@ -38,6 +45,20 @@ let initialState = {
             "1950's-1960's": false,
             "1990's - 2000's": false
         }
+    },
+    price: {
+        from: '',
+        to: ''
+    },
+    inputs: {
+        areaSlider: {
+            from: '20',
+            to: '9000'
+        },
+        priceSlider: {
+            from: '30',
+            to: '9000'
+        }
     }
 }
 
@@ -45,6 +66,19 @@ let initialState = {
 
 
 const catalogReducer = (state = initialState, action) => {
+
+    let resetFilters = () => {
+        let resetedCheckboxes = new Object;
+        for (const sections in state.checkboxes) {
+            resetedCheckboxes[sections] = new Object;
+            for (const checkbox in state.checkboxes[sections]) {
+                resetedCheckboxes[sections][checkbox] = false
+            }
+        }
+        return resetedCheckboxes;
+    }
+
+
     let getArrayOfCheckedCheckboxes = (object) => {
         let arrayOfCheckedCheckboxes = new Array;
         for (const key in object) {
@@ -65,12 +99,21 @@ const catalogReducer = (state = initialState, action) => {
         }
         return false
     }
+    let isInRange = (firstNumber, keyOfInputObject) => {
+        if (Number(firstNumber) > Number(state.inputs[keyOfInputObject].from) && Number(firstNumber) < Number(state.inputs[keyOfInputObject].to)) {
+            return true
+        }
+        return false
+    }
     let sortArray = (objectOfCheckedCheckboxes) => {
         let arrayOfSortedProperties = new Array;
         state.current.map((property) => {
+
             if (isCoincide(property.layoutType, objectOfCheckedCheckboxes.numberOfBedrooms) &&
                 isCoincide(property.renovation, objectOfCheckedCheckboxes.lastRenovation) &&
-                isCoincide(property.building, objectOfCheckedCheckboxes.buildingType)
+                isCoincide(property.building, objectOfCheckedCheckboxes.buildingType) &&
+                isInRange(property.price, "priceSlider") &&
+                isInRange(property.area.totalArea, "areaSlider")
             ) {
                 arrayOfSortedProperties.push(property)
             }
@@ -83,12 +126,6 @@ const catalogReducer = (state = initialState, action) => {
             lastRenovation: getArrayOfCheckedCheckboxes(state.checkboxes.lastRenovation),
             buildingType: getArrayOfCheckedCheckboxes(state.checkboxes.buildingType)
         }
-        if (objectOfCheckedCheckboxes.numberOfBedrooms.length == 0 &&
-            objectOfCheckedCheckboxes.lastRenovation.length == 0 &&
-            objectOfCheckedCheckboxes.buildingType.length == 0) {
-            return state.current;
-        }
-
         return sortArray(objectOfCheckedCheckboxes);
     }
 
@@ -147,17 +184,92 @@ const catalogReducer = (state = initialState, action) => {
             }
         case FILTER_PROPERTIES_BEDROOMS:
             {
-
                 return {
                     ...state,
                     filtered: [...makeFilteredArray()]
                 }
             }
-        case FILTER_PROPERTIES_RENOVATION:
+
+        case FILTER_PROPERTIES_PRICE:
             {
                 return {
                     ...state,
-                    filtered: [...makeFilteredArray()]
+                    filtered: [...makeFilteredArray()],
+                    price: {
+                        from: action.from,
+                        to: action.to
+                    }
+                }
+            }
+        case FILTER_PROPERTIES_AREA:
+            {
+                return {
+                    ...state,
+                    filtered: [...makeFilteredArray()],
+                    price: {
+                        from: action.from,
+                        to: action.to
+                    }
+                }
+            }
+        case RESET_FILTER:
+            {
+                return {
+                    ...state,
+                    filtered: [...state.current],
+                    checkboxes: resetFilters()
+                }
+            }
+        case CHANGE_PRICE_FROM_TEXT:
+            {
+                return {
+                    ...state,
+                    inputs: {
+                        priceSlider: {
+                            ...state.inputs.priceSlider,
+                            from: action.priceFrom
+                        },
+                        areaSlider: {...state.inputs.areaSlider }
+                    }
+                }
+            }
+        case CHANGE_PRICE_TO_TEXT:
+            {
+                return {
+                    ...state,
+                    inputs: {
+                        priceSlider: {
+                            ...state.inputs.priceSlider,
+                            to: action.priceTo
+                        },
+                        areaSlider: {...state.inputs.areaSlider }
+                    }
+                }
+            }
+        case CHANGE_AREA_FROM_TEXT:
+            {
+                return {
+                    ...state,
+                    inputs: {
+                        areaSlider: {
+                            ...state.inputs.areaSlider,
+                            from: action.areaFrom
+                        },
+                        priceSlider: {...state.inputs.priceSlider }
+                    }
+                }
+            }
+        case CHANGE_AREA_TO_TEXT:
+            {
+                return {
+                    ...state,
+                    inputs: {
+                        areaSlider: {
+                            ...state.inputs.areaSlider,
+                            to: action.areaTo
+                        },
+                        priceSlider: {...state.inputs.priceSlider }
+                    }
                 }
             }
         default:
@@ -177,7 +289,27 @@ export const setCurrentPageActionCreator = (currentPage) => ({ type: SET_CURRENT
 export const sortingPropertiesActionCreator = (selectedOption) => ({ type: SORT_PROPERTIES, selectedOption: selectedOption });
 export const setCheckboxActionCreator = (name, value, section) => ({ type: SET_CHECKBOX, name: name, value: value, section: section });
 export const filterPropertiesBedroomsActionCreator = () => ({ type: FILTER_PROPERTIES_BEDROOMS });
-export const filterPropertiesRemovationActionCreator = () => ({ type: FILTER_PROPERTIES_RENOVATION });
+export const filterByPriceActionCreator = (from, to) => ({ type: FILTER_PROPERTIES_PRICE, from, to });
+export const filterByAreaActionCreator = (from, to) => ({ type: FILTER_PROPERTIES_AREA, from, to });
+export const resetFilterActionCreator = () => ({ type: RESET_FILTER });
+
+
+export const changePriceFromTextActionCreator = (priceFrom) => ({
+    type: CHANGE_PRICE_FROM_TEXT,
+    priceFrom: priceFrom
+});
+export const changePriceToTextActionCreator = (priceTo) => ({
+    type: CHANGE_PRICE_TO_TEXT,
+    priceTo: priceTo
+});
+export const changeAreaFromTextActionCreator = (areaFrom) => ({
+    type: CHANGE_AREA_FROM_TEXT,
+    areaFrom: areaFrom
+});
+export const changeAreaToTextActionCreator = (areaTo) => ({
+    type: CHANGE_AREA_TO_TEXT,
+    areaTo: areaTo
+});
 
 
 export default catalogReducer;

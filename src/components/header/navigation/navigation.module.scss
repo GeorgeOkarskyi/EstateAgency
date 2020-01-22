@@ -1,125 +1,127 @@
 @import url('https://fonts.googleapis.com/css?family=Girassol&display=swap');
-.wrapper{
+.wrapper {
     display: flex;
     align-items: center;
 }
-.navigation{
-    position: relative; 
-    font-weight: bold; 
-    &__logo{
+
+.navigation {
+    position: relative;
+    font-weight: bold;
+    &__logo {
         font-size: 2.2em;
         font-family: 'Girassol', cursive;
         color: var(--main-design-color);
-        padding-bottom:   0.2em ;
+        padding-bottom: 0.2em;
         line-height: 1;
-        span{
+        span {
             font-size: 0.5em;
             color: black;
         }
     }
-    &__list{
+    &__list {
         display: flex;
         align-items: center;
         color: var(--text-color-dark);
-        
-        &__dropdown{ 
-            display: none; 
+        &__dropdown {
+            display: none;
             background: var(--main-bg-color);
-            li{ 
-                position: relative;
-                padding: 1.3em 2em 1.3em 2em;
-                text-align: left;
-                &:hover::before{
-                    position: absolute;
-                    content: '';
-                    top: 0;
-                    left: 0;
-                    width: 0.3em;
-                    height: 100%;
-                    background: var(--main-design-color);
-                }
-                &:hover{
-                    > a{
-                        color: var(--main-design-color);
+            li {
+                a{
+                    position: relative;
+                    display: block;
+                    padding: 1.3em 2em 1.3em 2em;
+                    text-align: left;
+                    &:hover::before {
+                        position: absolute;
+                        content: '';
+                        top: 0;
+                        left: 0;
+                        width: 0.3em;
+                        height: 100%;
+                        background: var(--main-design-color);
+                    }
+                    &:hover {
+                        >a {
+                            color: var(--main-design-color);
+                        }
                     }
                 }
+                
             }
         }
-        >li{ 
+        >li {
             cursor: pointer;
-            >span{
+            >span {
                 transition: 0.5s;
             }
-            >i{ 
+            >i {
                 transform: rotate(-90deg);
                 transition: 0.5s;
             }
-
         }
     }
-    &__item{
+    &__item {
         position: relative;
-        padding: 1.2em 1em  ; 
+        padding: 1.2em 1em;
         display: block;
         transition: .5s;
         color: var(--text-color-dark);
-
-        &:hover{
-            color: var(--main-design-color); 
-            span{
-                color: var(--main-design-color); 
+        &:hover {
+            color: var(--main-design-color);
+            span {
+                color: var(--main-design-color);
             }
-            i{
-                color: var(--main-design-color); 
-                transform: rotate( 0deg);  
+            i {
+                color: var(--main-design-color);
+                transform: rotate( 0deg);
             }
         }
-        &:hover::before{
-            content: ''; 
+        &:hover::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height:  0.3em;
+            height: 0.3em;
             background: var(--main-design-color);
-            }
+        }
     }
 }
 
-.active{
-    color: var(--main-design-color); 
-    &::before{
-        content: ''; 
+.active {
+    color: var(--main-design-color);
+    &::before {
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height:  0.3em;
+        height: 0.3em;
         background: var(--main-design-color);
     }
 }
- 
-.signIn{
+
+.signIn {
     margin-left: 5em;
     display: flex;
     align-items: center;
-    padding: 0.5em 2.5em;  
+    padding: 0.5em 2.5em;
     border: 1px solid var(--main-design-color);
     border-radius: 1.2em;
     background: none;
     color: var(--main-design-color);
     transition: .4s;
     text-transform: uppercase;
-    i{
+    i {
         padding-right: 0.3em;
     }
-    &:hover{
+    &:hover {
         background: var(--main-design-color);
         color: #fff;
     }
 }
 
-.toggler{
+.toggler {
     position: absolute;
     cursor: pointer;
     top: 2px;
@@ -130,120 +132,130 @@
 
 @keyframes roadRunnerIn {
     0% {
-      transform:translateX(-1500px) skewX(30deg) scaleX(1.3);
+        transform: translateX(-1500px) skewX(30deg) scaleX(1.3);
     }
     50% {
-        transform:translateX(-0px) skewX(0deg) scaleX(1);
+        transform: translateX(-0px) skewX(0deg) scaleX(1);
     }
     100% {
-        transform:translateX(-7px) skewX(0deg) scaleX(1);
+        transform: translateX(-7px) skewX(0deg) scaleX(1);
     }
 }
-@media (max-width: 823px){
-    .navigation__item{ 
+
+@media (max-width: 823px) {
+    .navigation__item {
         padding-right: 0.6em;
         padding-left: 0.6em;
     }
 }
 
-@media (max-width: 860px){
-    .signIn{
+@media (max-width: 860px) {
+    .signIn {
         margin-left: 2em;
     }
 }
-@media (max-width: 768px){
- 
-    .navigation{ 
-        // display: block;
-        &__list{
+
+@media (max-width: 768px) {
+    .navigation {
+        &__list {
             animation: roadRunnerIn .7s cubic-bezier(0.165, 0.840, 0.83, 1.00) both;
-            width: 300px;
-            height: auto; 
+            width: 105%;
+            height: 100vh;
             top: 0;
-            left: -4%;
+            left: 0;
             background: #000;
             position: fixed;
-            z-index: 33;
+            z-index: 22;
             display: none;
-            align-items: center;
-            border-radius: 0px 0px 27px 0px; 
-            &__dropdown{
+            &__dropdown {
                 display: block;
                 overflow-y: hidden;
                 overflow-x: hidden;
-                max-height: 300px; 
+                max-height: 300px;
                 transition-property: all;
                 transition-duration: 0.7s;
-                &__open{
+                &__open {
                     display: block;
                     max-height: 0;
                 }
             }
         }
-        &__item{ 
+        &__item {
             transition: all ease-in .4s;
-            text-align: left;
-            padding-left: 4em;
-            &__open{
+            text-align: center;
+            &__open {
                 display: block;
             }
         }
-        li{  
-            >ul{
-                
-                position: relative;    
-                li{ 
-                    padding-left: 4em; 
-                    &:hover::before{ 
-                        width:100% ;
-                        height: 0.3em; 
-                    } 
+        li {
+            >ul {
+                position: relative;
+                li {
+                    a{
+                        &:hover::before {
+                            width: 100%;
+                            height: 0.3em;
+                        }
+                    }
+
                 }
             }
         }
     }
-    .wrapper{
+    .wrapper {
         display: block;
     }
-    .signIn{
+    .signIn {
         margin: 0 auto;
-        margin-bottom: 20px;
+        margin: 1.2em;
+        // margin-bottom: 20px;
         // max-width: 50px;
     }
-    .toggler, .hamburger{
-        position: absolute; 
+    .toggler,
+    .hamburger {
+        position: absolute;
         right: 0;
         width: 2em;
-        height: 2em; 
+        height: 2em;
         top: 1em;
-
     }
-    .toggler{
+    .toggler {
+        top: 0.3em;
         z-index: 55;
         &:checked {
             z-index: 33;
-            width: 100%;
-            height: 100vh;
+            width: 2em;
+            height: 2em;
         }
-        &:checked + .hamburger > div {
+        &:checked+.hamburger>div {
             transform: rotate(135deg);
-            
-            &:before, &:after{
+            &:before,
+            &:after {
                 top: 0;
                 transform: rotate(90deg);
             }
         }
-        &:checked:hover + .hamburger > div   {
+        &:checked:hover+.hamburger>div {
             transform: rotate(225deg);
         }
-        &:checked ~ .navigation__list { 
-            display: block;
+        &:checked~.navigation__list {
+            li {
+                >ul {
+                    li {
+                        min-width: 200px;
+                    }
+                }
+            }
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             opacity: 1;
         }
     }
     .hamburger {
-        z-index: 32; 
-        > div {
+        z-index: 32;
+        >div {
             position: relative;
             flex: none;
             width: 100%;
@@ -253,42 +265,43 @@
             align-items: center;
             justify-content: center;
             transition: all 0.4s ease;
-            &::before, &::after {
+            &::before,
+            &::after {
                 content: '';
                 position: absolute;
                 z-index: 1;
                 top: -8px;
                 width: 100%;
                 padding: 2px 0;
-                background: inherit;}
+                background: inherit;
+            }
             &::after {
-                top:  8px ;
+                top: 8px;
             }
         }
-    } 
+    }
 }
 
-@media (min-width: 768px){
-    .navigation{
-        width: 100%;   
-        display: flex; 
+@media (min-width: 768px) {
+    .navigation {
+        width: 100%;
+        display: flex;
         justify-content: space-between;
         align-items: center;
-        &__list{
-            &__home{
+        &__list {
+            &__home {
                 display: none;
             }
-            &__dropdown{
+            &__dropdown {
                 position: absolute;
                 z-index: 11;
                 bottom: 0;
                 transform: translateY(100%);
-                box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
-  
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             }
-            li{
-                &:hover{    
-                    >ul{
+            li {
+                &:hover {
+                    >ul {
                         display: block;
                     }
                 }

@@ -8,7 +8,13 @@ import {setPropertiesActionCreator,
         sortingPropertiesActionCreator,
         setCheckboxActionCreator,
         filterPropertiesBedroomsActionCreator,
-        filterPropertiesRemovationActionCreator
+        filterByPriceActionCreator,
+        filterByAreaActionCreator,
+        changePriceFromTextActionCreator,
+        changePriceToTextActionCreator,
+        changeAreaFromTextActionCreator,
+        changeAreaToTextActionCreator,
+        resetFilterActionCreator
       } from '../../redux/reducers/catalog-reducer'
 
 
@@ -23,9 +29,18 @@ class catalogContainer extends React.Component {
             })
     }
     render() {
+      console.log()
         return <Catalog 
-              filterByLastRenovation={this.props.filterByLastRenovation}
-              filterByBedrooms={this.props.filterByBedrooms}
+              resetFilter={this.props.resetFilter}
+              changeAreaToText={this.props.changeAreaToText}
+              changeAreaFromText={this.props.changeAreaFromText}
+              areaSlider={this.props.areaSlider}
+              priceSlider={this.props.priceSlider}
+              changeToText={this.props.changeToText}
+              changeFromText={this.props.changeFromText}
+              filterByPrice={this.props.filterByPrice}
+              filterByArea={this.props.filterByArea}
+              filterByCheckboxes={this.props.filterByCheckboxes}
               checkboxes={this.props.checkboxes}
               sortingProperties={this.props.sortingProperties}
               postsPerPage={this.props.postsPerPage}
@@ -43,7 +58,10 @@ let mapStateToProps = (state) =>{
       isLoading: state.catalog.isLoading,
       currentPage: state.catalog.currentPage,
       postsPerPage: state.catalog.postsPerPage ,
-      checkboxes: state.catalog.checkboxes
+      checkboxes: state.catalog.checkboxes,
+      priceSlider: state.catalog.inputs.priceSlider,
+      areaSlider: state.catalog.inputs.areaSlider
+
     }
 }
 
@@ -61,15 +79,43 @@ let mapDispatchToProps = (dispatch) =>{
       sortingProperties: (selectedOption)=>{
         dispatch(sortingPropertiesActionCreator(selectedOption));
       },
-      filterByBedrooms: (name, value, type)=>{
+      filterByCheckboxes: (name, value, type)=>{
         dispatch(setCheckboxActionCreator(name, value, type));
         dispatch(filterPropertiesBedroomsActionCreator());
       },
-      filterByLastRenovation: (name, value)=>{
-        dispatch(setCheckboxActionCreator(name, value));
-        dispatch(filterPropertiesRemovationActionCreator());
+      filterByPrice: (from, to)=>{ 
+        dispatch(filterByPriceActionCreator(from, to));
       },
-      
+      filterByArea: (from, to)=>{
+        dispatch(filterByAreaActionCreator(from, to));
+      },
+      changeFromText: (textTo, textFrom) => {
+        if (textTo - textFrom < 1) {
+          dispatch(changePriceToTextActionCreator(Number(textFrom) + 1));
+        }
+        dispatch(changePriceFromTextActionCreator(textFrom));
+      },
+      changeToText: (textTo, textFrom) => {
+        if (textTo - textFrom < 1) {
+          dispatch(changePriceFromTextActionCreator(Number(textTo) - 1));
+        }
+        dispatch(changePriceToTextActionCreator(textTo));
+      },
+      changeAreaFromText: (textTo, textFrom) =>{
+        if (textTo - textFrom < 1) {
+            dispatch(changeAreaToTextActionCreator(Number(textFrom) + 1));
+        }
+        dispatch(changeAreaFromTextActionCreator(textFrom));
+      },
+      changeAreaToText: (textTo, textFrom) =>{
+        if (textTo - textFrom < 1) {
+            dispatch(changeAreaFromTextActionCreator(Number(textTo) - 1));
+        }
+        dispatch(changeAreaToTextActionCreator(textTo));
+      },
+      resetFilter: () => {
+        dispatch(resetFilterActionCreator());
+      }
 
     }
 }

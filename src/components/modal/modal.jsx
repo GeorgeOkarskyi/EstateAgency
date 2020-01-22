@@ -7,7 +7,7 @@ import styles from './modal.module.scss';
  
 
 
-let Modal = (props) => {   
+let Modal = (props) => {
   if (!props.state.show) {
     return null;
   }
@@ -30,13 +30,13 @@ let Modal = (props) => {
         <div onClick={(e) => e.stopPropagation()} className={styles.modal}>
           <button onClick={onCloseModal} className={styles.close} >
             X
-        </button>
+          </button>
 
           <div className={styles.top}>
-            <div onClick={onShowLogin} className={styles.top_item}  >login</div>
-            <div onClick={onShowRegistration} className={styles.top_item} >registration</div>
+            <div className={`${styles.top_item} ${ props.state.login ? styles.top_item_active : ''}`} onClick={onShowLogin}>login</div>
+            <div className={`${styles.top_item} ${ props.state.regiastation ? styles.top_item_active : ''}`} onClick={onShowRegistration} >registration</div>
           </div>
-          <Login state={props.state}  ></Login>
+          <Login  state={props.state}  ></Login>
           <RegisterContainer state={props.state} ></RegisterContainer>
         </div>
       </div>

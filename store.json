@@ -1,9 +1,7 @@
 {
-    "properties": [
-        {
+    "properties": [{
             "id": "1234",
-            "images": [
-                {
+            "images": [{
                     "original": "https://www.wattrealty.com.au/wp-content/uploads/2016/09/granny-flat-brisbane-2.jpg",
                     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8RngL1lPRTYzxfO-_QtM-tIKA0uIWwbVy3wNDxqkNalbnacLD&s"
                 },
@@ -23,7 +21,7 @@
                 "kitchen": "50",
                 "bedroom": "100"
             },
-            "price": "2700",
+            "price": "40",
             "renovation": "Brand New",
             "building": "2000's - up",
             "layoutType": "penthouse",
@@ -36,8 +34,7 @@
         },
         {
             "id": "1111",
-            "images": [
-                {
+            "images": [{
                     "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
                     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
                 },
@@ -70,8 +67,7 @@
         },
         {
             "id": "1112",
-            "images": [
-                {
+            "images": [{
                     "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
                     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
                 },
@@ -104,8 +100,7 @@
         },
         {
             "id": "1113",
-            "images": [
-                {
+            "images": [{
                     "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
                     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
                 },
@@ -138,8 +133,7 @@
         },
         {
             "id": "1114",
-            "images": [
-                {
+            "images": [{
                     "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
                     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
                 },
@@ -172,8 +166,7 @@
         },
         {
             "id": "1115",
-            "images": [
-                {
+            "images": [{
                     "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
                     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
                 },
@@ -206,8 +199,7 @@
         },
         {
             "id": "1116",
-            "images": [
-                {
+            "images": [{
                     "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
                     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
                 },
@@ -240,8 +232,7 @@
         },
         {
             "id": "1117",
-            "images": [
-                {
+            "images": [{
                     "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
                     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
                 },
@@ -274,8 +265,7 @@
         },
         {
             "id": "1118",
-            "images": [
-                {
+            "images": [{
                     "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
                     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
                 },
@@ -308,8 +298,7 @@
         },
         {
             "id": "1119",
-            "images": [
-                {
+            "images": [{
                     "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
                     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
                 },
@@ -342,8 +331,7 @@
         },
         {
             "id": "1121",
-            "images": [
-                {
+            "images": [{
                     "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
                     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
                 },
@@ -376,8 +364,7 @@
         },
         {
             "id": "1122",
-            "images": [
-                {
+            "images": [{
                     "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
                     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
                 },
@@ -410,8 +397,7 @@
         },
         {
             "id": "1123",
-            "images": [
-                {
+            "images": [{
                     "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
                     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
                 },
@@ -444,8 +430,7 @@
         },
         {
             "id": "1124",
-            "images": [
-                {
+            "images": [{
                     "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
                     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
                 },
@@ -478,8 +463,7 @@
         },
         {
             "id": "1125",
-            "images": [
-                {
+            "images": [{
                     "original": "https://s3.amazonaws.com/productuploader-uploads/staging/19/Image/58866_1506526850_glassy_isola_1.jpg",
                     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPx3V3Xk3w99e5hnpim9O0R3clxVJbhxDnG2kmrd6JkGJje181&s"
                 },
@@ -511,8 +495,7 @@
             }
         }
     ],
-    "coments": [
-        {
+    "coments": [{
             "id": "0001",
             "propertyId": "1234",
             "coment": "Nice Apartment",
@@ -583,7 +566,7 @@
             "propertyId": "1111",
             "coment": "clean flat",
             "published": "04.01.2020"
-        },        {
+        }, {
             "id": "4000",
             "propertyId": "1111",
             "coment": "bad flat",

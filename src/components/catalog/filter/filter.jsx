@@ -1,8 +1,7 @@
 import 'font-awesome/css/font-awesome.min.css';
 import React, { useState } from 'react';
 import styles from './filter.module.scss';
-import RagneSliderAreaContainer from './rangeSlider/rangeSliderAreaContainer';
-import RagneSliderPriceContainer from './rangeSlider/rangeSliderPriceContainer';
+import RagneSlider from './rangeSlider/rangeSlider'; 
 
 
 
@@ -20,17 +19,19 @@ const Filter = (props) => {
     }
     let onFilterByBedroomsCheckbox = (event) => {
         let handleInput = handleInputChange(event)
-        props.filterByBedrooms(handleInput.name, handleInput.value, "numberOfBedrooms")
+        props.filterByCheckboxes(handleInput.name, handleInput.value, "numberOfBedrooms")
     }
     let onFilterByLastRenovationCheckbox = (event) => {
         let handleInput = handleInputChange(event)
-        props.filterByBedrooms(handleInput.name, handleInput.value, "lastRenovation")
+        props.filterByCheckboxes(handleInput.name, handleInput.value, "lastRenovation")
     }
     let onFilterByBuildingTypeCheckbox = (event) => {
         let handleInput = handleInputChange(event)
-        props.filterByBedrooms(handleInput.name, handleInput.value, "buildingType")
+        props.filterByCheckboxes(handleInput.name, handleInput.value, "buildingType")
     }
-
+    let onResetFilter = () => {
+        props.resetFilter()
+    }
 
     return (
 
@@ -41,7 +42,11 @@ const Filter = (props) => {
                     <h2>FILTER</h2>
                     <fieldset className={styles.filter_type}>
                         <legend className={styles.filter_type__title}>Price</legend>
-                        <RagneSliderPriceContainer />
+                        <RagneSlider   
+                            valueOfSlider={props.priceSlider}
+                            changeFromText={props.changeFromText}
+                            changeToText={props.changeToText}
+                            filter={props.filterByPrice} />
                     </fieldset>
                     <fieldset className={styles.filter_type}>
                         <legend onClick={() => showNumberOfBedrooms ? setShowNumberOfBedrooms(false) : setShowNumberOfBedrooms(true)} className={styles.filter_type__title}>
@@ -62,7 +67,11 @@ const Filter = (props) => {
                     </fieldset>
                     <fieldset className={styles.filter_type}>
                         <legend className={styles.filter_type__title}>Total area m2</legend>
-                        <RagneSliderAreaContainer />
+                        <RagneSlider   
+                            valueOfSlider={props.areaSlider}
+                            changeFromText={props.changeAreaFromText}
+                            changeToText={props.changeAreaToText}
+                            filter={props.filterByArea} />
                     </fieldset>
                     <fieldset className={styles.filter_type}>
                         <legend onClick={() => showBuildingType ? setShowBuildingType(false) : setShowBuildingType(true)} className={styles.filter_type__title}>
@@ -98,7 +107,7 @@ const Filter = (props) => {
                             <input onClick={(e) => e.preventDefault()} className={styles.filter_type_search__submit} type="submit" value="search" />
                         </div>
                     </fieldset>
-                    <input className={styles.filter__reset} type="reset" value="reset" />
+                    <input onClick={onResetFilter} className={styles.filter__reset} type="reset" value="reset" />
                 </div>
             </div>
         </form>

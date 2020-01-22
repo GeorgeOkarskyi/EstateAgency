@@ -9,15 +9,15 @@ import {  NavLink} from 'react-router-dom';
 
 const Navigation = (props) => {
     const [showServices, setServices] = useState(true);
-    const [showInformation, setInformation] = useState(true);
+    const [showInformation, setInformation] = useState(true); 
 
 
     let onOpenModal = () => {
         props.openModal()
     }
-    let checkbox = React.createRef();
-
-    let close = () => {
+ 
+    let checkbox = React.createRef(); 
+    let close = () => { 
         checkbox.current.checked = false;
     }
 
@@ -29,11 +29,11 @@ const Navigation = (props) => {
                     <div className={styles.navigation__logo}>
                         <NavLink  to='/'>the<span>agency</span></NavLink>
                     </div>
-                    <input ref={checkbox} type="checkbox" className={styles.toggler}></input>
+                    <input  ref={checkbox}  type="checkbox" className={styles.toggler}></input>
                     <div className={styles.hamburger}>
                         <div></div>
                     </div>
-                    <ul className={styles.navigation__list}>
+                    <ul className={`${styles.navigation__list}  ` }>
                         <li className={styles.navigation__list__home} onClick={close} >
                             <NavLink   className={styles.navigation__item} to='/'>Home</NavLink>
                         </li>

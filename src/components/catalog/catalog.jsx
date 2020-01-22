@@ -7,7 +7,24 @@ import React from 'react';
 import Properties from './properties/properties';
 
 
-const Catalog = ({postsPerPage , properties, isLoading,  currentPage, setCurrentPage, sortingProperties, checkboxes, filterByBedrooms, filterByLastRenovation}) => {  
+const Catalog = ({
+    resetFilter,
+    changeAreaToText,
+    changeAreaFromText,
+    areaSlider,
+    priceSlider, 
+    changeFromText, 
+    changeToText,
+    postsPerPage, 
+    filterByPrice, 
+    filterByArea,
+    properties, 
+    isLoading,  
+    currentPage, 
+    setCurrentPage, 
+    sortingProperties, 
+    checkboxes, 
+    filterByCheckboxes}) => {  
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -18,7 +35,18 @@ const Catalog = ({postsPerPage , properties, isLoading,  currentPage, setCurrent
         <div className="container">
             <div className={styles.catalog_container}>
                 <div className={styles.filter}>
-                    <Filter filterByLastRenovation={filterByLastRenovation} filterByBedrooms={filterByBedrooms} checkboxes={checkboxes}></Filter>
+                    <Filter
+                    resetFilter={resetFilter}
+                    changeAreaToText={changeAreaToText}
+                    changeAreaFromText={changeAreaFromText}
+                    areaSlider={areaSlider}
+                    priceSlider={priceSlider}
+                    changeFromText={changeFromText}
+                    changeToText={changeToText}
+                    filterByPrice={filterByPrice}  
+                    filterByArea={filterByArea}
+                    filterByCheckboxes={filterByCheckboxes} 
+                    checkboxes={checkboxes}></Filter>
                 </div>
                 <div className={styles.right}>
                     <CatalogPanel sortingProperties={sortingProperties} isLoading={isLoading} length={`${properties.length}`}></CatalogPanel>

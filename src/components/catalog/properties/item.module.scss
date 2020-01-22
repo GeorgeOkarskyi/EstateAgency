@@ -1,7 +1,7 @@
 .item{
     background: var(--search-area-bg);
     box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
-    margin: 10px 0;
+    margin: 1.5em 0;
     height: 9.3em; 
     transition: .5s;
     display: flex;
@@ -29,7 +29,7 @@
             display: -webkit-box;
             overflow : hidden;
             text-overflow: ellipsis;
-            -webkit-line-clamp: 5;
+            -webkit-line-clamp: 4;
             -webkit-box-orient: vertical; 
         }
         &:nth-child(3){
