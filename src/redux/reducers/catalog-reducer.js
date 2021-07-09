@@ -1,3 +1,5 @@
+import {catalogAPI} from "../../api/api";
+
 const SET_PROPERTIES = "SET_PROPERTIES";
 const SET_LOADING = "SET_LOADING";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
@@ -61,8 +63,6 @@ let initialState = {
         }
     }
 }
-
-
 
 
 const catalogReducer = (state = initialState, action) => {
@@ -131,167 +131,165 @@ const catalogReducer = (state = initialState, action) => {
 
 
     switch (action.type) {
-        case SET_PROPERTIES:
-            {
-                return {
-                    ...state,
-                    current: [...action.properties],
-                    filtered: [...action.properties]
-                }
+        case SET_PROPERTIES: {
+            return {
+                ...state,
+                current: [...action.properties],
+                filtered: [...action.properties]
             }
-        case SET_LOADING:
-            {
-                return {
-                    ...state,
-                    isLoading: action.isLoading
-                }
+        }
+        case SET_LOADING: {
+            return {
+                ...state,
+                isLoading: action.isLoading
             }
-        case SET_CURRENT_PAGE:
-            {
-                return {
-                    ...state,
-                    currentPage: action.currentPage
-                }
+        }
+        case SET_CURRENT_PAGE: {
+            return {
+                ...state,
+                currentPage: action.currentPage
             }
-        case SORT_PROPERTIES:
-            {
-                let sortedProperties;
-                if (action.selectedOption == "priceMinMax") {
-                    sortedProperties = state.filtered.sort((a, b) => { return a.price - b.price });
-                } else if (action.selectedOption == "priceMaxMin") {
-                    sortedProperties = state.filtered.sort((a, b) => { return b.price - a.price });
-                } else {
-                    sortedProperties = [...state.filtered];
-                }
-                return {
-                    ...state,
-                    filtered: [...sortedProperties]
-                }
+        }
+        case SORT_PROPERTIES: {
+            let sortedProperties;
+            if (action.selectedOption == "priceMinMax") {
+                sortedProperties = state.filtered.sort((a, b) => {
+                    return a.price - b.price
+                });
+            } else if (action.selectedOption == "priceMaxMin") {
+                sortedProperties = state.filtered.sort((a, b) => {
+                    return b.price - a.price
+                });
+            } else {
+                sortedProperties = [...state.filtered];
             }
-        case SET_CHECKBOX:
-            {
-                return {
-                    ...state,
-                    checkboxes: {
-                        ...state.checkboxes,
-                        [action.section]: {
-                            ...state.checkboxes[action.section],
-                            [action.name]: action.value
-                        }
+            return {
+                ...state,
+                filtered: [...sortedProperties]
+            }
+        }
+        case SET_CHECKBOX: {
+            return {
+                ...state,
+                checkboxes: {
+                    ...state.checkboxes,
+                    [action.section]: {
+                        ...state.checkboxes[action.section],
+                        [action.name]: action.value
                     }
+                }
 
-                };
+            };
+        }
+        case FILTER_PROPERTIES_BEDROOMS: {
+            return {
+                ...state,
+                filtered: [...makeFilteredArray()]
             }
-        case FILTER_PROPERTIES_BEDROOMS:
-            {
-                return {
-                    ...state,
-                    filtered: [...makeFilteredArray()]
-                }
-            }
+        }
 
-        case FILTER_PROPERTIES_PRICE:
-            {
-                return {
-                    ...state,
-                    filtered: [...makeFilteredArray()],
-                    price: {
-                        from: action.from,
-                        to: action.to
-                    }
+        case FILTER_PROPERTIES_PRICE: {
+            return {
+                ...state,
+                filtered: [...makeFilteredArray()],
+                price: {
+                    from: action.from,
+                    to: action.to
                 }
             }
-        case FILTER_PROPERTIES_AREA:
-            {
-                return {
-                    ...state,
-                    filtered: [...makeFilteredArray()],
-                    price: {
-                        from: action.from,
-                        to: action.to
-                    }
+        }
+        case FILTER_PROPERTIES_AREA: {
+            return {
+                ...state,
+                filtered: [...makeFilteredArray()],
+                price: {
+                    from: action.from,
+                    to: action.to
                 }
             }
-        case RESET_FILTER:
-            {
-                return {
-                    ...state,
-                    filtered: [...state.current],
-                    checkboxes: resetFilters()
+        }
+        case RESET_FILTER: {
+            return {
+                ...state,
+                filtered: [...state.current],
+                checkboxes: resetFilters()
+            }
+        }
+        case CHANGE_PRICE_FROM_TEXT: {
+            return {
+                ...state,
+                inputs: {
+                    priceSlider: {
+                        ...state.inputs.priceSlider,
+                        from: action.priceFrom
+                    },
+                    areaSlider: {...state.inputs.areaSlider}
                 }
             }
-        case CHANGE_PRICE_FROM_TEXT:
-            {
-                return {
-                    ...state,
-                    inputs: {
-                        priceSlider: {
-                            ...state.inputs.priceSlider,
-                            from: action.priceFrom
-                        },
-                        areaSlider: {...state.inputs.areaSlider }
-                    }
+        }
+        case CHANGE_PRICE_TO_TEXT: {
+            return {
+                ...state,
+                inputs: {
+                    priceSlider: {
+                        ...state.inputs.priceSlider,
+                        to: action.priceTo
+                    },
+                    areaSlider: {...state.inputs.areaSlider}
                 }
             }
-        case CHANGE_PRICE_TO_TEXT:
-            {
-                return {
-                    ...state,
-                    inputs: {
-                        priceSlider: {
-                            ...state.inputs.priceSlider,
-                            to: action.priceTo
-                        },
-                        areaSlider: {...state.inputs.areaSlider }
-                    }
+        }
+        case CHANGE_AREA_FROM_TEXT: {
+            return {
+                ...state,
+                inputs: {
+                    areaSlider: {
+                        ...state.inputs.areaSlider,
+                        from: action.areaFrom
+                    },
+                    priceSlider: {...state.inputs.priceSlider}
                 }
             }
-        case CHANGE_AREA_FROM_TEXT:
-            {
-                return {
-                    ...state,
-                    inputs: {
-                        areaSlider: {
-                            ...state.inputs.areaSlider,
-                            from: action.areaFrom
-                        },
-                        priceSlider: {...state.inputs.priceSlider }
-                    }
+        }
+        case CHANGE_AREA_TO_TEXT: {
+            return {
+                ...state,
+                inputs: {
+                    areaSlider: {
+                        ...state.inputs.areaSlider,
+                        to: action.areaTo
+                    },
+                    priceSlider: {...state.inputs.priceSlider}
                 }
             }
-        case CHANGE_AREA_TO_TEXT:
-            {
-                return {
-                    ...state,
-                    inputs: {
-                        areaSlider: {
-                            ...state.inputs.areaSlider,
-                            to: action.areaTo
-                        },
-                        priceSlider: {...state.inputs.priceSlider }
-                    }
-                }
-            }
-        default:
-            {
-                return {
-                    ...state,
-                    current: [...state.current]
-                };
-            }
+        }
+        default: {
+            return {
+                ...state,
+                current: [...state.current]
+            };
+        }
 
     }
 }
 
-export const setPropertiesActionCreator = (properties) => ({ type: SET_PROPERTIES, properties: properties });
-export const setLoadingActionCreator = (isLoading) => ({ type: SET_LOADING, isLoading: isLoading });
-export const setCurrentPageActionCreator = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage: currentPage });
-export const sortingPropertiesActionCreator = (selectedOption) => ({ type: SORT_PROPERTIES, selectedOption: selectedOption });
-export const setCheckboxActionCreator = (name, value, section) => ({ type: SET_CHECKBOX, name: name, value: value, section: section });
-export const filterPropertiesBedroomsActionCreator = () => ({ type: FILTER_PROPERTIES_BEDROOMS });
-export const filterByPriceActionCreator = (from, to) => ({ type: FILTER_PROPERTIES_PRICE, from, to });
-export const filterByAreaActionCreator = (from, to) => ({ type: FILTER_PROPERTIES_AREA, from, to });
-export const resetFilterActionCreator = () => ({ type: RESET_FILTER });
+export const setPropertiesActionCreator = (properties) => ({type: SET_PROPERTIES, properties: properties});
+export const setLoadingActionCreator = (isLoading) => ({type: SET_LOADING, isLoading: isLoading});
+export const setCurrentPageActionCreator = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage: currentPage});
+export const sortingPropertiesActionCreator = (selectedOption) => ({
+    type: SORT_PROPERTIES,
+    selectedOption: selectedOption
+});
+export const setCheckboxActionCreator = (name, value, section) => ({
+    type: SET_CHECKBOX,
+    name: name,
+    value: value,
+    section: section
+});
+export const filterPropertiesBedroomsActionCreator = () => ({type: FILTER_PROPERTIES_BEDROOMS});
+export const filterByPriceActionCreator = (from, to) => ({type: FILTER_PROPERTIES_PRICE, from, to});
+export const filterByAreaActionCreator = (from, to) => ({type: FILTER_PROPERTIES_AREA, from, to});
+export const resetFilterActionCreator = () => ({type: RESET_FILTER});
 
 
 export const changePriceFromTextActionCreator = (priceFrom) => ({
@@ -310,6 +308,17 @@ export const changeAreaToTextActionCreator = (areaTo) => ({
     type: CHANGE_AREA_TO_TEXT,
     areaTo: areaTo
 });
+
+export const getProperties = () => {
+    return (dispatch) => {
+        dispatch(setLoadingActionCreator(true));
+        catalogAPI.getProperties().then((data) => {
+                dispatch(setPropertiesActionCreator(data));
+                dispatch(setLoadingActionCreator(false));
+            }
+        )
+    }
+};
 
 
 export default catalogReducer;

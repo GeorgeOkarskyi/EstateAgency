@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Switch, Link, useRouteMatch, NavLink} from 'react-router-dom';
 import ApartmentsForRent from './apartments-for-rent/apartments-for-rent';
 import ApartmentsForSale from './apartments-for-sale/apartments-for-sale';
-import SellingProperty from './selling-property/selling-property';
+import SellingPropertyContainer from './selling-property/sellingPropertyContainer.js';
 import styles from './services.module.scss'
 
 const Services = () =>{
@@ -32,7 +32,7 @@ const Services = () =>{
                     <ApartmentsForSale ></ApartmentsForSale>}>
                 </Route>
                 <Route path={`${path}/selling-property`} render={() =>
-                    <SellingProperty ></SellingProperty>}>
+                    <SellingPropertyContainer></SellingPropertyContainer>}>
                 </Route>
             </Switch>
         </div>
